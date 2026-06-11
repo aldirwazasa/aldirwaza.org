@@ -91,19 +91,27 @@ html[lang="en"] .ar { display:none !important; }
 .nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:50%;border:1px solid rgba(205,181,145,.4);background:var(--white);padding:3px;}
 .nav-logo-text{font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--cream);}
 .nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+  <!--
 .nav-links li button{
   background:none;border:none;
   font-family:var(--fb);font-size:.85rem;
   color:var(--cream);padding:.38rem .72rem;
   border-radius:4px;transition:var(--tr);
   white-space:nowrap;opacity:.85;
+} -->
+.nav-links li button {
+  background: none; border: none;
+  font-family: var(--fb); font-size: .85rem;
+  color: var(--stone); padding: .38rem .72rem;
+  border-radius: 4px; transition: var(--tr);
+  white-space: nowrap; opacity: .85;
 }
-.nav-links li button:hover <!-- ,.nav-links li button.active{background:var(--stone);color:var(--dark-olive);opacity:1;} -->
-<!-- why is the book button singled out? commented -->
-<!-- .nav-book-btn{background:var(--olive);color:var(--white) !important;opacity:1;} -->  
-<!-- .nav-book-btn:hover{background:#8a6548;} -->
-.nav-links li <!-- button.nav-book-btn.active{background:var(--olive);} -->
-
+.nav-links li button:hover,
+.nav-links li button.active {
+  background: var(--stone);
+  color: var(--dark-olive);
+  opacity: 1;
+}
 /* Language toggle */
 .lang-toggle{
   display:flex;align-items:center;gap:0;
