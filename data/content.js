@@ -46,7 +46,7 @@ const EXPERIENCES = [
     locationEn:  "Qatif",
     description: "جولة مرشدة في قلعة القطيف التاريخية، شاهدة على حضارات متعاقبة، مع مرشد سياحي متخصص يروي قصص المكان.",
     descEn:      "A guided tour of the historic Qatif Fort — a witness to successive civilisations — led by a specialist guide who brings the place's stories to life.",
-    image: "",
+    image: "\images\tours_and_experiences\qatif_qalaa_tour.jpg",
     tag:    "جولة مرشدة",
     tagEn:  "Guided Tour",
     price: "",
