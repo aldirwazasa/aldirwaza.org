@@ -91,14 +91,6 @@ html[lang="en"] .ar { display:none !important; }
 .nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:50%;border:1px solid rgba(205,181,145,.4);background:var(--white);padding:3px;}
 .nav-logo-text{font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--cream);}
 .nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
-  <!--
-.nav-links li button{
-  background:none;border:none;
-  font-family:var(--fb);font-size:.85rem;
-  color:var(--cream);padding:.38rem .72rem;
-  border-radius:4px;transition:var(--tr);
-  white-space:nowrap;opacity:.85;
-} -->
 .nav-links li button {
   background: none; border: none;
   font-family: var(--fb); font-size: .85rem;
@@ -150,10 +142,12 @@ html[lang="en"] .nav-mobile button{text-align:left;}
 
 /* ── Buttons ── */
 .btn{display:inline-block;font-family:var(--fb);font-size:.92rem;padding:.68rem 1.7rem;border-radius:4px;border:2px solid transparent;text-align:center;transition:var(--tr);line-height:1.4;cursor:pointer;}
-.btn-primary{background:var(--brown);color:var(--white);border-color:var(--brown);}
-.btn-primary:hover{background:#8a6548;border-color:#8a6548;transform:translateY(-2px);box-shadow:0 6px 18px rgba(157,119,87,.3);}
+.btn-primary{background:var(--olive);color:var(--white);border-color:var(--olive);}
+.btn-primary:hover{background:var(--olive);border-color:var(--olive);transform:translateY(-2px);box-shadow:0 6px 18px rgba(157,119,87,.3);}
+  <!-- did not change btn-outline because I did not find any uses within, maybe change later -->
 .btn-outline{background:transparent;color:var(--brown);border-color:var(--brown);}
 .btn-outline:hover{background:var(--brown);color:var(--white);transform:translateY(-2px);}
+  
 .btn-outline-light{background:transparent;color:var(--stone);border-color:rgba(214,204,182,.38);}
 .btn-outline-light:hover{background:rgba(214,204,182,.1);color:var(--cream);transform:translateY(-2px);}
 .btn-olive{background:var(--olive);color:var(--white);border-color:var(--olive);}
