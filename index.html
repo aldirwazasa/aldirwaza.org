@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Aldirwaza Initiative — Where Heritage Meets Tomorrow's Qatif"/>
+<meta name="description" content="Where Al-Khatt meets the Qatif of tomorrow"/>
 <meta property="og:title" content="مبادرة الدروازة | Aldirwaza Initiative"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://aldirwaza.org"/>
@@ -88,7 +88,8 @@ html[lang="en"] .ar { display:none !important; }
   padding:0 2rem; gap:1rem;
 }
 .nav-logo{display:flex;align-items:center;gap:.6rem;cursor:pointer;flex-shrink:0;}
-.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:50%;border:1px solid rgba(205,181,145,.4);background:var(--white);padding:3px;}
+.nav-logo img{height:40px;width:40px;object-fit:contain;background:var(--white);padding:3px;}
+<!-- .nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:50%;border:1px solid rgba(205,181,145,.4);background:var(--white);padding:3px;} -->
 .nav-logo-text{font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--cream);}
 .nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
 .nav-links li button {
@@ -127,31 +128,35 @@ html[lang="en"] .ar { display:none !important; }
 /* Hamburger */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:.5rem;}
 .hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:var(--tr);}
-.nav-mobile{display:none;flex-direction:column;background:var(--dark-olive);border-top:1px solid var(--brown);padding:.75rem 1.5rem 1.25rem;gap:.2rem;position:sticky;top:64px;z-index:199;}
+.nav-mobile{display:none;flex-direction:column;background:var(--dark-olive);border-top:1px solid var(--stone);padding:.75rem 1.5rem 1.25rem;gap:.2rem;position:sticky;top:64px;z-index:199;}
 .nav-mobile.open{display:flex;}
 .nav-mobile button{background:none;border:none;font-family:var(--fb);font-size:.95rem;color:var(--stone);text-align:right;padding:.5rem .25rem;border-bottom:1px solid rgba(205,181,145,.12);transition:var(--tr);}
 html[lang="en"] .nav-mobile button{text-align:left;}
-.nav-mobile button:hover{color:var(--brown-lt);}
+.nav-mobile button:hover{color:var(--cream);} <!-- changed to cream -->
 .nav-mobile-lang{display:flex;gap:.5rem;padding:.75rem .25rem .25rem;}
 .nav-mobile-lang button{
-  flex:1;background:rgba(205,181,145,.1);border:1px solid rgba(205,181,145,.25);
+  flex:1;background:rgba(214, 204, 182,.1);border:1px solid rgba(214, 204, 182,.25); <!-- changed to stone shade -->
   border-radius:4px;font-family:var(--fb);font-size:.85rem;font-weight:700;
   color:var(--stone);padding:.4rem;text-align:center;transition:var(--tr);
 }
-.nav-mobile-lang button.lang-active{background:var(--brown);color:var(--white);border-color:var(--brown);}
+.nav-mobile-lang button.lang-active{background:var(--stone);color:var(--dark-olive);border-color:var(--stone);}
 
 /* ── Buttons ── */
 .btn{display:inline-block;font-family:var(--fb);font-size:.92rem;padding:.68rem 1.7rem;border-radius:4px;border:2px solid transparent;text-align:center;transition:var(--tr);line-height:1.4;cursor:pointer;}
+  
 .btn-primary{background:var(--olive);color:var(--white);border-color:var(--olive);}
 .btn-primary:hover{background:var(--olive);border-color:var(--olive);transform:translateY(-2px);box-shadow:0 6px 18px rgba(157,119,87,.3);}
-  <!-- did not change btn-outline because I did not find any uses within, maybe change later -->
-.btn-outline{background:transparent;color:var(--brown);border-color:var(--brown);}
-.btn-outline:hover{background:var(--brown);color:var(--white);transform:translateY(-2px);}
+  <!-- chnaged but only saw social media icons use, check later -->
+
+.btn-outline{background:transparent;color:var(--stone);} 
+.btn-outline:hover{background:rgba(101, 107, 55, 0.25);color:var(--stone);transform:translateY(-2px);}
   
 .btn-outline-light{background:transparent;color:var(--stone);border-color:rgba(214,204,182,.38);}
 .btn-outline-light:hover{background:rgba(214,204,182,.1);color:var(--cream);transform:translateY(-2px);}
+
 .btn-olive{background:var(--olive);color:var(--white);border-color:var(--olive);}
 .btn-olive:hover{background:var(--dark-olive);transform:translateY(-2px);}
+
 .btn-sm{padding:.46rem 1.1rem;font-size:.82rem;}
 .btn-full{width:100%;}
 
@@ -160,7 +165,7 @@ html[lang="en"] .nav-mobile button{text-align:left;}
 .section-narrow{max-width:800px;margin:0 auto;}
 .section-wide{max-width:1160px;margin:0 auto;}
 .section-title{font-family:var(--ft);font-weight:700;font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--ink);line-height:1.25;margin-bottom:.4rem;}
-.divider{width:44px;height:3px;background:var(--brown);border-radius:2px;margin:.6rem 0 2rem;}
+.divider{width:44px;height:3px;background:var(--dark-olive);border-radius:2px;margin:.6rem 0 2rem;}
 .body-text{color:var(--ink-soft);line-height:1.9;font-size:.96rem;}
 
 /* LTR overrides for English */
