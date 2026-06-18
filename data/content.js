@@ -146,7 +146,7 @@ const LANDMARKS = [
     locationEn:  "Qatif, Eastern Province",
     description: "قلعة القطيف التاريخية إحدى أبرز المعالم الأثرية في المنطقة الشرقية، شيدت على مر العصور وشهدت حضارات متعاقبة. تقع في قلب مدينة القطيف وتطل على الخليج العربي.",
     descEn:      "Qatif Fort is one of the most prominent archaeological sites in the Eastern Province, built across successive eras and witness to many civilisations. It sits in the heart of Qatif overlooking the Arabian Gulf.",
-    image: "images/landmarks/qalaat_qatif.HEIC",
+    image: "images/landmarks/qalaat_qatif.jpg",
   },
   {
     id: "tarout-fort",
