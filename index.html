@@ -364,35 +364,6 @@ html[lang="en"] .contact-link:hover{transform:translateX(4px);}
 .newsletter-form button:hover{background:var(--cream);}
 
 /* ── Hero ── */
-<!-- .hero{position:relative;min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--dark-olive);padding:5rem 2rem 6rem;}
-.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(45deg,rgba(205,181,145,.05) 0,rgba(205,181,145,.05) 1px,transparent 1px,transparent 34px),repeating-linear-gradient(-45deg,rgba(205,181,145,.05) 0,rgba(205,181,145,.05) 1px,transparent 1px,transparent 34px);}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to top,var(--surface),transparent);pointer-events:none;}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(71, 73, 39,.08) 0,
-    rgba(71, 73, 39,.08) 1px,
-    transparent 1px,
-    transparent 30px 
-  );
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url('images/home_bg.jpeg');
-  background-size: cover;
-  background-position: top center;
-  opacity: 0.18;
-}
--->
 
 .hero {
   position: relative;
@@ -425,20 +396,7 @@ html[lang="en"] .contact-link:hover{transform:translateX(4px);}
   opacity: 0.22;
   z-index: 0;
 }
-<!--
-/* Bottom fade — blends hero into the page below */
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 160px;
-  pointer-events: none;
-  background: linear-gradient(to top, var(--surface), transparent);
-  z-index: 1;
-}
-  -->
+
 .hero-eyebrow{display:inline-block;border:1px solid rgba(205,181,145,.38);color:var(--brown-lt);font-size:.78rem;letter-spacing:.13em;padding:.3rem 1.05rem;border-radius:100px;margin-bottom:1.6rem;animation:fadeUp .7s both;}
 .hero-logo{width:112px;height:112px;object-fit:contain;border-radius:50%;border:2px solid rgba(205,181,145,.3);background:var(--white);padding:7px;margin:0 auto 1.6rem;animation:fadeUp .7s .1s both;}
 .hero h1{font-family:var(--ft);font-weight:700;font-size:clamp(2.6rem,6.5vw,4.8rem);color:var(--cream);line-height:1.15;margin-bottom:.85rem;animation:fadeUp .7s .15s both;}
