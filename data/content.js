@@ -167,22 +167,22 @@ const LANDMARKS = [
 // ─────────────────────────────────────────────────────
 const TEAM_EXECUTIVES = [
   {
-    name:    "جمانة الحواج",
-    nameEn:  "Jumana Al-Hawaj",
-    role:    "مسؤولة التجارب",
-    roleEn:  "Head of Experiences",
-    bio:     "من القطيف. تخرجت بتخصص الهندسة الكيميائية من جامعة پردو في أمريكا، وتعمل حالياً كمهندسة نفط وغاز في أرامكو.",
-    bioEn:   "From Qatif. She holds a Chemical Engineering degree from Purdue University, USA, and currently works as an Oil & Gas Engineer at Aramco.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/%D8%AC%D9%85%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D8%AD%D9%88%D8%A7%D8%AC-1.jpg?resize=1024%2C1024&ssl=1",
-  },
-  {
     name:    "دانة العلقم",
     nameEn:  "Dana Al-Alqam",
     role:    "رئيسة المبادرة — مسؤولة جودة الحياة",
     roleEn:  "Initiative Lead — Quality of Life",
     bio:     "تدرس إدارة الضيافة الدولية في جامعة EHL في سويسرا. مؤمنة بأن فكرة بسيطة يمكن أن تغير مدينة كاملة إذا كانت نابعة من أهلها.",
     bioEn:   "Studying International Hospitality Management at EHL University in Switzerland. She believes a simple idea can transform an entire city when it comes from its own people.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/0O3A0583-2-edited.jpg?resize=3167%2C3167&ssl=1",
+    image: "images/team/dana_alalqam.jpg",
+  },
+  {
+    name:    "جمانة الحواج",
+    nameEn:  "Jumana Al-Hawaj",
+    role:    "مسؤولة التجارب",
+    roleEn:  "Head of Experiences",
+    bio:     "من القطيف. تخرجت بتخصص الهندسة الكيميائية من جامعة پردو في أمريكا، وتعمل حالياً كمهندسة نفط وغاز في أرامكو.",
+    bioEn:   "From Qatif. She holds a Chemical Engineering degree from Purdue University, USA, and currently works as an Oil & Gas Engineer at Aramco.",
+    image: "images/team/jumanah_alhawaj.JPG",
   },
   {
     name:    "زينة الفخر",
@@ -191,7 +191,7 @@ const TEAM_EXECUTIVES = [
     roleEn:  "Head of Marketing",
     bio:     "تخرجت من جامعة تكساس في أوستن بتخصص هندسة البترول وتعمل في أرامكو. هاوية للتصوير وتوثيق جمال القطيف.",
     bioEn:   "Petroleum Engineering graduate from the University of Texas at Austin, working at Aramco. A passionate photographer dedicated to documenting Qatif's beauty.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/%D8%B2%D9%8A%D9%86%D8%A9-%D8%A7%D9%84%D9%81%D8%AE%D8%B1.jpg?resize=1024%2C1024&ssl=1",
+    image: "images/team/zaina_alfakher.jpg",
   },
   {
     name:    "فاطمة الحواج",
@@ -200,7 +200,7 @@ const TEAM_EXECUTIVES = [
     roleEn:  "Head of Technical & Financial Affairs",
     bio:     "خريجة علوم وهندسة المواد من جامعة إلنوي، وتكمل حالياً الماجستير في جامعة الملك عبدالله للعلوم والتقنية.",
     bioEn:   "Materials Science & Engineering graduate from the University of Illinois, currently pursuing her Master's at KAUST.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/%D9%81%D8%A7%D8%B7%D9%85%D8%A9-%D8%A7%D9%84%D8%AD%D9%88%D8%A7%D8%AC.jpg?resize=1024%2C1024&ssl=1",
+    image: "images/team/fatimah_alhawaj.JPG",
   },
 ];
 
@@ -215,7 +215,7 @@ const TEAM_MEMBERS = [
     roleEn:  "Graphic Design Lead",
     bio:     "طالبة تصميم جرافيكي في جامعة الأميرة نورة. تعشق الفن بكل أنواعه.",
     bioEn:   "Graphic Design student at Princess Nourah University. She has a deep passion for art in all its forms.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/fatoom-1.jpg?resize=1024%2C1024&ssl=1",
+    image: "images/team/fatimah_alfakher.jpeg",
   },
   {
     name:    "آلاء الخميس",
@@ -224,7 +224,7 @@ const TEAM_MEMBERS = [
     roleEn:  "Photography & Marketing",
     bio:     "خريجة جامعة كاليفورنيا في بيركلي بالهندسة الكيميائية. تعمل في مجال الحفر وصيانة الآبار في أرامكو.",
     bioEn:   "Chemical Engineering graduate from UC Berkeley, working in Drilling & Well Services at Aramco.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2026/01/%D8%A2%D9%84%D8%A7%D8%A1-1.jpeg?resize=889%2C889&ssl=1",
+    image: "images/team/alaa_alkhamis.jpeg",
   },
   {
     name:    "ناصر السنان",
@@ -233,7 +233,7 @@ const TEAM_MEMBERS = [
     roleEn:  "Interviews Lead",
     bio:     "خريج جامعة بردو بالهندسة الميكانيكية. يعمل في أرامكو ونشر رواية 'مرحباً بكم إلى الحياة' في ٢٠٢٥.",
     bioEn:   "Mechanical Engineering graduate from Purdue University, working at Aramco. Published his novel 'Welcome to Life' in 2025.",
-    image: "https://i0.wp.com/aldirwaza.org/wp-content/uploads/2025/10/nasser.jpg?resize=629%2C669&ssl=1",
+    image: "images/team/nasser_alsinan.jpeg",
   },
   {
     name:    "فاطمة العوامي",
