@@ -153,7 +153,10 @@ html[lang="en"] .nav-mobile button{text-align:left;}
   
 .btn-outline-light{background:transparent;color:var(--stone);border-color:rgba(214,204,182,.38);}
 .btn-outline-light:hover{background:rgba(214,204,182,.1);color:var(--cream);transform:translateY(-2px);}
-
+  
+.btn-stone{background:var(--stone);color:var(--dark-olive);border-color:var(--stone);}
+.btn-stone:hover{background:var(--cream);transform:translateY(-2px);}
+  
 .btn-olive{background:var(--olive);color:var(--white);border-color:var(--olive);}
 .btn-olive:hover{background:var(--dark-olive);transform:translateY(-2px);}
 
@@ -200,30 +203,12 @@ html[lang="en"] .divider{margin-left:0;margin-right:0;}
 
 /* ── Page header ── */
 .page-header{background:var(--cream);padding:3.5rem 2rem 3rem;text-align:center;position:relative;overflow:hidden;}
-<!-- remove ugly boxes in header -->
-<!-- .page-header::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(45deg,rgba(205,181,145,.05) 0,rgba(205,181,145,.05) 1px,transparent 1px,transparent 30px);} -->
-<!-- .page-header::before{content:'';position:absolute;inset:0;pointer-events:none;}
-.page-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(214, 204, 182,.08) 0,
-    rgba(214, 204, 182,.08) 1px,
-    <!-- transparent 1px, -->
-    transparent 30px 
-  );
-}
--->
-  
 .page-header::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url('images/home_bg.jpeg');
+  background-image: url('images/header_bg.jpeg');
   background-size: cover;
   background-position: top center;
   opacity: 0.18;
@@ -559,10 +544,10 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
     <p class="hero-tagline ar">حيث يلتقي الخُط العريق بقطيف الغد</p>
     <p class="hero-tagline en">Where Heritage Meets Tomorrow's Qatif</p>
     <div class="hero-cta">
-      <button class="btn btn-primary ar" onclick="showPage('tours')">اكتشف التجارب والجولات</button>
-      <button class="btn btn-primary en" onclick="showPage('tours')">Explore Experiences</button>
-      <button class="btn btn-outline-light ar" onclick="showPage('about')">تعرف علينا</button>
-      <button class="btn btn-outline-light en" onclick="showPage('about')">About Us</button>
+      <button class="btn btn-stone ar" onclick="showPage('tours')">اكتشف التجارب والجولات</button>
+      <button class="btn btn-stone en" onclick="showPage('tours')">Explore Experiences</button>
+      <button class="btn btn-stone ar" onclick="showPage('about')">تعرف علينا</button>
+      <button class="btn btn-stone en" onclick="showPage('about')">About Us</button>
     </div>
   </section>
 
