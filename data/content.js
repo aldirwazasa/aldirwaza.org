@@ -316,8 +316,15 @@ const WORKS = [
 //  HERO GALLERY IMAGES (home page strip)
 // ─────────────────────────────────────────────────────
 const HERO_GALLERY = [
-  "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-2-575x1024.jpg",
-  "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-4-576x1024.jpg",
-  "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-1-1024x640.jpg",
-  "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-6-1024x578.jpg",
+  "images/gallery/tour_1.jpg",
+  "images/gallery/palm_1.jpg",
+  "images/gallery/tour_2.jpg",
+  "images/gallery/dokhala_1.jpg",
+  "images/gallery/tour_3.jpg",
+  "images/gallery/pottery_1.jpg",
+  "images/gallery/tour_4.jpg",
+  "images/gallery/cooking_1.jpg",
+  "images/gallery/tour_5.jpg",
+  "images/gallery/pottery_2.jpg",
+  "images/gallery/tour_6.jpg",
 ];
