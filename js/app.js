@@ -92,6 +92,16 @@ function lmCard(lm, i) {
 
 function setEl(id, html) { const el=document.getElementById(id); if(el) el.innerHTML=html; }
 
+function scrollGallery(direction) {
+  const strip = document.getElementById('hero-gallery');
+  if (!strip) return;
+  const item = strip.querySelector('.gallery-item');
+  if (!item) return;
+  const itemWidth = item.getBoundingClientRect().width + 3;
+  const isRtl = document.getElementById('html-root').dir === 'rtl';
+  const delta = isRtl ? -direction : direction;
+  strip.scrollBy({ left: delta * itemWidth, behavior: 'smooth' });
+}
 function renderAll() {
   // Gallery
   const gal = document.getElementById('hero-gallery');
