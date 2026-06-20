@@ -389,11 +389,36 @@ html[lang="en"] .contact-link:hover{transform:translateX(4px);}
 .hero-tagline{text-shadow:0px 0px 15px #1C1A14; font-family:var(--ft);font-weight:300;font-size:clamp(.92rem,2vw,1.1rem);color:var(--surface);margin-bottom:2rem;animation:fadeUp .7s .2s both;}
 .hero-cta{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .27s both;position:relative;z-index:1;}
 
-/* Gallery */
-.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;}
-.gallery-item{overflow:hidden;height:270px;cursor:pointer;}
+/* Gallery — swipeable carousel, 4 visible at a time */
+.gallery-wrap{position:relative;}
+.gallery-strip{
+  display:flex;
+  gap:3px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.gallery-strip::-webkit-scrollbar{display:none;}
+.gallery-item{
+  overflow:hidden;height:270px;cursor:pointer;flex-shrink:0;
+  width:calc(25% - 2.25px);
+  scroll-snap-align:start;
+}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease);}
 .gallery-item:hover img{transform:scale(1.05);}
+.gallery-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(28,26,20,.55);border:none;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:5;transition:var(--tr);
+}
+.gallery-arrow:hover{background:var(--brown);}
+.gallery-arrow svg{width:20px;height:20px;}
+.gallery-arrow-prev{left:14px;}
+.gallery-arrow-next{right:14px;}
 
 /* Home about */
 .home-about{background:var(--olive);padding:4.5rem 2rem;text-align:center;}
@@ -440,8 +465,7 @@ html[lang="en"] .footer-col ul li button{text-align:left;}
 }
 @media(max-width:580px){
   .footer-inner{grid-template-columns:1fr;gap:1.8rem;}
-  .gallery-strip{grid-template-columns:1fr;}
-  .gallery-item{height:230px;}
+  .gallery-item{height:230px;width:88%;}
   .form-wrap{padding:1.4rem;}
   .newsletter-form{flex-direction:column;}
   .hero h1{font-size:2.5rem;}
@@ -551,7 +575,15 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
     </div>
   </section>
 
-  <div class="gallery-strip" id="hero-gallery"></div>
+      <div class="gallery-wrap">
+        <button class="gallery-arrow gallery-arrow-prev" onclick="scrollGallery(-1)" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="gallery-strip" id="hero-gallery"></div>
+        <button class="gallery-arrow gallery-arrow-next" onclick="scrollGallery(1)" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
 
   <section class="home-about">
     <div class="section-narrow">
