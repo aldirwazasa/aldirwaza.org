@@ -46,15 +46,13 @@ function teamCard(m) {
   const name = t(m.name, m.nameEn || m.name);
   const role = t(m.role, m.roleEn || m.role);
   const bio  = t(m.bio,  m.bioEn  || m.bio);
-  const flipHint = t('اضغط لرؤية السيرة','Click to flip');
-  return `<div class="team-card" onclick="this.classList.toggle('flipped')" title="${flipHint}">
+  return `<div class="team-card" onclick="this.classList.toggle('flipped')">
     <div class="team-card-inner">
       <div class="team-card-front">
         <div class="team-photo">${imgOrPh(m.image,name)}</div>
         <div class="team-info" style="padding:.9rem 1.1rem 1.1rem">
           <div class="team-name">${name}</div>
           <div class="team-role">${role}</div>
-          <div style="font-size:.7rem;color:var(--stone);margin-top:.5rem;opacity:.7">⟳ ${flipHint}</div>
         </div>
       </div>
       <div class="team-card-back">
