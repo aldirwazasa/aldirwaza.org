@@ -240,42 +240,7 @@ html[lang="en"] .card-badge{right:auto;left:.65rem;}
 .card-meta{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;gap:.5rem;flex-wrap:wrap;}
 .card-tag{font-size:.73rem;background:var(--cream);color:var(--ink-soft);padding:.18rem .62rem;border-radius:100px;}
 
-  <!--
-/* ── Team ── */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.3rem;}
-.team-card{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:0 2px 10px var(--shadow);transition:transform var(--tr),box-shadow var(--tr);}
-.team-card:hover{transform:translateY(-4px);box-shadow:0 10px 26px var(--shadow-lg);}
-.team-photo{height:195px;overflow:hidden;background:var(--stone);}
-.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s var(--ease);}
-.team-card:hover .team-photo img{transform:scale(1.04);}
-.team-info{padding:.95rem 1.1rem 1.3rem;text-align:center;}
-.team-name{font-family:var(--ft);font-weight:700;font-size:.98rem;margin-bottom:.22rem;}
-.team-role{font-size:.75rem;color:var(--brown);margin-bottom:.55rem;font-family:var(--ft);}
-.team-bio{font-size:.8rem;color:var(--ink-soft);line-height:1.6;font-family:var(--ft);}
-
-
-/* ── Team card flip ── */
-.team-card{background:transparent;box-shadow:none;perspective:900px;cursor:pointer;}
-.team-card-inner{position:relative;width:100%;transition:transform .55s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d;border-radius:var(--r);}
-.team-card:hover .team-card-inner,.team-card.flipped .team-card-inner{transform:rotateY(180deg);}
-.team-card-front,.team-card-back{
-  position:absolute;top:0;left:0;width:100%;
-  backface-visibility:hidden;-webkit-backface-visibility:hidden;
-  border-radius:var(--r);overflow:hidden;
-  box-shadow:0 2px 10px var(--shadow);
-}
-.team-card-front{background:var(--white);}
-.team-card-back{
-  background:var(--dark-olive);
-  transform:rotateY(180deg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:1.4rem 1.2rem;text-align:center;
-}
-.team-card-back .team-name{color:var(--cream);margin-bottom:.4rem;}
-.team-card-back .team-role{color:var(--brown-lt);margin-bottom:.8rem;}
-.team-card-back .team-bio{color:rgba(214,204,182,.82);font-size:.82rem;line-height:1.7;}
-.team-card-spacer{height:340px;} /* fixed card height for all members */
--->
+  
   /* ── Team ── */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.3rem;}
 .team-card{background:transparent;box-shadow:none;perspective:900px;cursor:pointer;}
