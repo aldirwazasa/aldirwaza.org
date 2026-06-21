@@ -278,8 +278,9 @@ const WORKS = [
     descEn:      "The launch of our guided tours at the historic Qatif Fort, welcoming the first group of enthusiastic visitors.",
     article:     "في عام ٢٠٢٥ انطلقت مبادرة الدروازة بجولاتها المرشدة الأولى في قلعة القطيف التاريخية.\n\nاستقبلنا الزوار في رحلة خلال أروقة القلعة العريقة التي شهدت حضارات متعاقبة على مدى آلاف السنين. رافقهم مرشد سياحي متخصص يروي قصص المكان وحكايات أهله.\n\nكان الحضور متنوعاً بين أبناء المنطقة الراغبين في اكتشاف تراثهم من جديد، وزوار من مدن مختلفة جاؤوا فضولاً ومحبةً للتاريخ.",
     articleEn:   "In 2025, Aldirwaza launched its first guided tours at the historic Qatif Fort.\n\nWe welcomed visitors on a journey through the corridors of this ancient fortress — a site that has witnessed successive civilisations over thousands of years. A specialist guide accompanied each group, narrating the place's stories and the tales of its people.\n\nAttendees were a rich mix: residents of the region rediscovering their own heritage, and visitors from other cities drawn by curiosity and a love of history.",
-    image: "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-1-1024x640.jpg",
+    image: "images/articles/qatif_tour.jpg",
   },
+   /*
   {
     title:       "تجربة صناعة الفخار",
     titleEn:     "Pottery Making Experience",
@@ -309,7 +310,7 @@ const WORKS = [
     article:     "توسّعت مبادرة الدروازة لتشمل جزيرة تاروت، إحدى أعرق المستوطنات البشرية في شبه الجزيرة العربية.\n\nانطلقت الجولات نحو قلعة تاروت الشامخة، حيث رافق المرشدون الزوار في جولة عميقة بين أسوار القلعة وتاريخها الممتد عبر آلاف السنين.\n\nاكتشف الزوار أن جزيرة تاروت ليست مجرد موقع أثري، بل مجتمع حيّ يحمل في شوارعه وبيوته العتيقة ذاكرة لا تُنسى.",
     articleEn:   "Aldirwaza expanded its reach to Tarout Island — one of the oldest human settlements on the Arabian Peninsula.\n\nTours set out toward the towering Tarout Fort, where guides led visitors through a deep exploration of its walls and its history spanning thousands of years.\n\nVisitors discovered that Tarout Island is not merely an archaeological site, but a living community whose ancient streets and homes carry an unforgettable memory.",
     image: "https://aldirwaza.org/wp-content/uploads/2025/04/home-page-6-1024x578.jpg",
-  },
+  },*/
 ];
 
 // ─────────────────────────────────────────────────────
