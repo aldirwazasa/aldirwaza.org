@@ -38,7 +38,7 @@ function expCard(e) {
   const desc  = t(e.description, e.descEn || e.description);
   const tag   = t(e.tag, e.tagEn || e.tag);
   const bookTxt = e.status==='coming-soon' ? t('ابق على اطلاع','Notify Me') : t('احجز الآن','Book Now');
-  const btnCls  = e.status==='coming-soon' ? 'btn btn-outline btn-sm' : 'btn btn-primary btn-sm';
+  const btnCls  = e.status==='coming-soon' ? 'btn btn-stone btn-sm' : 'btn btn-primary btn-sm';
   return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" onclick="showPage('booking')">${bookTxt}</button></div></div></div>`;
 }
 
