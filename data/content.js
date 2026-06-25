@@ -195,10 +195,10 @@ const TEAM_EXECUTIVES = [
   },
   {
     name:    "فاطمة الحواج",
-    nameEn:  "Fatima Al-Hawaj",
+    nameEn:  "Fatima Alاawaj",
     role:    "مسؤولة الشؤون التقنية والمالية",
     roleEn:  "Head of Technical & Financial Affairs",
-    bio:     "خريجة علوم وهندسة المواد من جامعة إلنوي، وتكمل حالياً الماجستير في جامعة الملك عبدالله للعلوم والتقنية.",
+    bio:     "طالبة ماجستير هندسة مواد في جامعة الملك عبدالله. بدأت فاطمة مبادرة الدروازة لإيمانها بأن القطيف تستحق أكثر، وتشوف المبادرة كبداية لترسيخ القطيف كمدينة سياحية والحفاظ على تاريخها وثقافتها للأجيال الجاية.",
     bioEn:   "Materials Science & Engineering graduate from the University of Illinois, currently pursuing her Master's at KAUST.",
     image: "images/team/fatimah_alhawaj.JPG",
   },
