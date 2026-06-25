@@ -199,7 +199,7 @@ const TEAM_EXECUTIVES = [
     role:    "مسؤولة الشؤون التقنية والمالية",
     roleEn:  "Head of Technical & Financial Affairs",
     bio:     "طالبة ماجستير هندسة مواد في جامعة الملك عبدالله. بدأت فاطمة مبادرة الدروازة لإيمانها بأن القطيف تستحق أكثر، وتشوف المبادرة كبداية لترسيخ القطيف كمدينة سياحية والحفاظ على تاريخها وثقافتها للأجيال الجاية.",
-    bioEn:   "Materials Science & Engineering graduate from the University of Illinois, currently pursuing her Master's at KAUST.",
+    bioEn:   "Fatimah is a materials engineering master’s student at KAUST. She co-founded the initiative sincerely believing that AlQatif deserves to be a tourist city, and sees Aldirwaza as the foundation stone to more and more projects preserving this city’s rich culture and history.",
     image: "images/team/fatimah_alhawaj.JPG",
   },
 ];
