@@ -271,14 +271,18 @@ const TEAM_MEMBERS = [
 // ─────────────────────────────────────────────────────
 const WORKS = [
   {
-    title:       "جولات قلعة القطيف",
-    titleEn:     "Qatif Fort Tours",
-    date:        "٢٠٢٥",
-    description: "انطلاق جولاتنا المرشدة في قلعة القطيف التاريخية، واستقبال أول دفعة من الزوار المتحمسين.",
-    descEn:      "The launch of our guided tours at the historic Qatif Fort, welcoming the first group of enthusiastic visitors.",
-    article:     "في عام ٢٠٢٥ انطلقت مبادرة الدروازة بجولاتها المرشدة الأولى في قلعة القطيف التاريخية.\n\nاستقبلنا الزوار في رحلة خلال أروقة القلعة العريقة التي شهدت حضارات متعاقبة على مدى آلاف السنين. رافقهم مرشد سياحي متخصص يروي قصص المكان وحكايات أهله.\n\nكان الحضور متنوعاً بين أبناء المنطقة الراغبين في اكتشاف تراثهم من جديد، وزوار من مدن مختلفة جاؤوا فضولاً ومحبةً للتاريخ.",
-    articleEn:   "In 2025, Aldirwaza launched its first guided tours at the historic Qatif Fort.\n\nWe welcomed visitors on a journey through the corridors of this ancient fortress — a site that has witnessed successive civilisations over thousands of years. A specialist guide accompanied each group, narrating the place's stories and the tales of its people.\n\nAttendees were a rich mix: residents of the region rediscovering their own heritage, and visitors from other cities drawn by curiosity and a love of history.",
-    image: "images/articles/qatif_tour.jpg",
+    title:       "تجربة صنع الدوخلة مع الأستاذ منصور المدن",
+    titleEn:     "Dokhala Making Experience with Mansoor Al Madan",
+    date:        "2026",
+    description: "سف وتزيين دوخلات في شهر الحج",
+    descEn:      "Palm weaving Dokhalas",
+    article:     "في نهار 6 ذو الحجة 1447 هـ (23 مايو 2026)، عشنا تجربة جميلة مع الأستاذ منصور المدن، ودخلنا عالم سف السعف وتعلّمنا وحدة من أقدم الحرف اللي اشتهرت فيها القطيف. \n" +
+       "بين شغل اليدين وسوالف الأولين، أخذنا الأستاذ في رحلة إلى قصة الدوخلة، وشرح لنا كيف بدأت هالعادة مع سفر حجاج القطيف للحج، يوم كانت الرحلة تاخذ شهور، وكان الحجاج يتحملوا مو بس طول الطريق، حتى المرض والجوع في سبيل إتمام دينهم. كان الأطفال يتجمعوا على ساحل البحر، وكل واحد شايل دوخلته في إيده، يدعوا إن البحر يرجّع أهلهم بسلامتهم من الرحلة.\n" + 
+       "وبدينا نسف الدوخلة من الصفر، سعفة ورا سعفة، لين صارت قدامنا جاهزة تحمل نباتات. وبعدها أطلق الأطفال خيالهم، وزينوها بالألوان والخرز، وزرعوا فيها بذور نباتات مختلفة، عشان تكتمل الدوخلة مثل ما توارثها أهل المنطقة جيل بعد جيل. كانت تجربة جمعت بين الحرفة، والحكاية، وإحياء واحد من أجمل الموروثات الشعبية في القطيف.",
+    articleEn:   "On the afternoon of 6 Dhu al-Hijjah 1447 AH (May 23, 2026), we stepped into the world of traditional palm leaf weaving with instructor Mansoor Al Madan, learning one of Qatif's oldest and most cherished crafts. \n" +
+       "As our hands weaved, Al Madan shared the story behind the Dokhala, guiding us through the process of weaving a Dokhala from scratch. He explained how this tradition emerged when pilgrims from Qatif and the neighboring coastal communities departed for Hajj, a journey that once took several months. In those days, pilgrims endured not only the long distance but also hunger, illness, and many hardships to fulfill their religion. During their absence, children would gather along the Qatif shoreline carrying their planted Dokhalas, praying that the sea would safely return their loved ones from the journey it had taken them on.\n" + 
+     "Once the weaving was complete, the children decorated their dokhlas with colorful beads and paints before planting a variety of seeds inside them, continuing a beloved tradition that has been passed down through generations.The experience beautifully combined traditional craftsmanship, storytelling, and the preservation of one of Qatif's most treasured folk customs.",
+    image: "images/articles/dokhala_making.PNG",
   },
    /*
   {
