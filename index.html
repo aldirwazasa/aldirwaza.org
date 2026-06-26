@@ -316,58 +316,56 @@ html[lang="en"] .form-group label .req{margin-right:0;margin-left:.12rem;}
 .form-group input[type="file"]{padding:.45rem;}
 .radio-group,.check-group{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:.2rem;}
 .radio-label,.check-label{display:flex;align-items:center;gap:.38rem;font-size:.88rem;}
-/* Hide native input but keep it accessible */
-.radio-label input,
-.check-label input {
+  
+.radio-group, .check-group {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-top: .4rem;
+}
+.radio-label, .check-label {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-size: .88rem;
+  cursor: pointer;
+}
+.radio-label input, .check-label input {
   appearance: none;
   -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--brown);
-  cursor: pointer;
   flex-shrink: 0;
-  transition: var(--tr);
-  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--stone);
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color var(--tr), background var(--tr);
 }
-
-/* Radio — circular */
 .radio-label input {
   border-radius: 50%;
 }
-
-/* Checkbox — square with rounded corners */
 .check-label input {
-  border-radius: 4px;
+  border-radius: 3px;
 }
-
-/* Checked state — filled center for radio */
 .radio-label input:checked {
-  background: var(--white);
   border-color: var(--brown);
-  box-shadow: inset 0 0 0 4px var(--brown);
+  box-shadow: inset 0 0 0 3px var(--white), inset 0 0 0 6px var(--brown);
 }
-
-/* Checked state — filled with checkmark for checkbox */
 .check-label input:checked {
-  background: var(--brown);
   border-color: var(--brown);
+  background: var(--brown);
 }
 .check-label input:checked::after {
   content: '';
-  position: absolute;
-  left: 3px;
-  top: 0px;
-  width: 5px;
-  height: 10px;
-  border: 2px solid var(--white);
+  display: block;
+  width: 4px;
+  height: 8px;
+  border: 1.5px solid var(--white);
   border-top: none;
   border-left: none;
-  transform: rotate(45deg);
+  transform: rotate(45deg) translate(2px, -1px);
 }
-
-/* Focus ring for accessibility */
-.radio-label input:focus,
-.check-label input:focus {
+.radio-label input:focus, .check-label input:focus {
   outline: 2px solid var(--brown-lt);
   outline-offset: 2px;
 }
@@ -640,10 +638,10 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 
   <section class="home-about">
     <div class="section-narrow">
-      <h2 class="ar">نربط تراثك بمستقبلك</h2>
-      <h2 class="en">Connecting Heritage to the Future</h2>
-      <p class="ar">نعمل على تنظيم وتوحيد الخدمات السياحية في محافظة القطيف، لتسهيل وصول الزوار وتعزيز استفادتهم بطريقة متكاملة تجمع بين الأصالة والتطور.</p>
-      <p class="en">We work to unify and elevate tourism services across Qatif — making the city accessible and enriching for every visitor, while celebrating its authentic heritage.</p>
+      <h2 class="ar">بالخط العريق نرسم قطيف الغد</h2>
+      <h2 class="en">Using Al-Khatt's history to build tomorrow's Qatif</h2>
+      <p class="ar">نسعى لتحويل القطيف إلى وجهة سياحية رائدة في المملكة العربية السعودية والارتقاء بجودة حياتها لتخدم أهاليها والسياح.</p>
+      <p class="en">We strive to transform Qatif into a leading tourism destination in the Kingdom of Saudi Arabia while enhancing its quality of life, creating a place that serves both its residents and visitors alike.</p>
       <button class="btn btn-outline-light ar" onclick="showPage('about')">اقرأ المزيد</button>
       <button class="btn btn-outline-light en" onclick="showPage('about')">Learn More</button>
     </div>
