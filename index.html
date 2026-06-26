@@ -323,47 +323,6 @@ html[lang="en"] .form-group label .req{margin-right:0;margin-left:.12rem;}
   gap: .55rem;
   margin-top: .4rem;
 }
-.radio-label, .check-label {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-  font-size: .88rem;
-  cursor: pointer;
-}
-.radio-label input, .check-label input {
-  appearance: none;
-  -webkit-appearance: none;
-  flex-shrink: 0;
-  width: 16px;
-  height: 16px;
-  min-width: 16px;
-  min-height: 16px;
-  align-self: center;
-  border: 1.5px solid var(--stone);
-  background: var(--white);
-  cursor: pointer;
-  transition: border-color var(--tr), background var(--tr);
-  box-sizing: border-box;
-}
-.radio-label input {
-  border-radius: 50%;
-}
-.check-label input {
-  border-radius: 3px;
-}
-.radio-label input:checked {
-  border-color: var(--brown);
-  box-shadow: inset 0 0 0 3px var(--white), inset 0 0 0 6px var(--brown);
-}
-.check-label input:checked {
-  border-color: var(--brown);
-  background: var(--brown);
-}
-
-.radio-label input:focus, .check-label input:focus {
-  outline: 2px solid var(--brown-lt);
-  outline-offset: 2px;
-}
   
 .payment-note{background:var(--cream);border-right:4px solid var(--brown-lt);border-radius:4px;padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.88rem;color:var(--ink-soft);line-height:1.7;}
 html[lang="en"] .payment-note{border-right:none;border-left:4px solid var(--brown-lt);}
@@ -660,7 +619,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 
   <div class="newsletter-bar">
     <h3 class="ar">اشترك لتوصلك آخر أخبارنا</h3>
-    <h3 class="en">Stay in the Loop</h3>
+    <h3 class="en">Stay in the loop</h3>
     <p class="ar">كن أول من يعلم عن الفعاليات والجولات القادمة</p>
     <p class="en">Be the first to know about upcoming events and tours</p>
     <form class="newsletter-form" onsubmit="handleNewsletter(event)">
@@ -689,13 +648,14 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
     <div class="section-narrow">
       <div class="reveal">
         <h2 class="section-title ar">المهمة</h2>
-        <h2 class="section-title en">Our Mission</h2>
-        <div class="divider"></div>نعمل من خلال مبادرة الدروازة على تنظيم وتوحيد الخدمات السياحية المتوفرة في محافظة القطيف، بما يسهم في تسهيل وصول الزوار والمقيمين إليها، وتعزيز الاستفادة منها بطريقة متكاملة. تركّز جهودنا الحالية على تطوير تجربة الزائر من خلال تقديم خدمات متناسقة وسلسة، تمكّنه من استكشاف القطيف بكل يسر، مع الحرص على الدمج بين الأصالة والتطور، بما يعكس هوية القطيف ويعزز من مكانتها كوجهة سياحية ثقافية رائدة في المنطقة. كما نسعى إلى جمع هذه الخدمات والأنشطة في منصة واحدة تُبرز ما تزخر به المنطقة من مقومات ثقافية وتاريخية وبيئية.</p>
+        <h2 class="section-title en">Mission</h2>
+        <div class="divider"></div>
+        <p class="body-text ar">نعمل من خلال مبادرة الدروازة على تنظيم وتوحيد الخدمات السياحية المتوفرة في محافظة القطيف، بما يسهم في تسهيل وصول الزوار والمقيمين إليها، وتعزيز الاستفادة منها بطريقة متكاملة. تركّز جهودنا الحالية على تطوير تجربة الزائر من خلال تقديم خدمات متناسقة وسلسة، تمكّنه من استكشاف القطيف بكل يسر، مع الحرص على الدمج بين الأصالة والتطور، بما يعكس هوية القطيف ويعزز من مكانتها كوجهة سياحية ثقافية رائدة في المنطقة. كما نسعى إلى جمع هذه الخدمات والأنشطة في منصة واحدة تُبرز ما تزخر به المنطقة من مقومات ثقافية وتاريخية وبيئية.</p>
         <p class="body-text en">Through Aldirwaza Initiative, we work to organize and unify the tourism services available across Qatif, making them more accessible to both visitors and residents while maximizing their collective value through an integrated approach. Our current efforts focus on enhancing the visitor experience by providing seamless, coordinated services that enable guests to explore Qatif with ease. We are committed to blending authenticity with modern development in a way that reflects Qatif's unique identity and strengthens its position as a leading cultural tourism destination in the region. We also seek to bring these services and activities together on a single platform that showcases the area's rich cultural, historical, and environmental assets.</p>
       </div>
       <div class="reveal" style="margin-top:3rem">
         <h2 class="section-title ar">الرؤية</h2>
-        <h2 class="section-title en">Our Vision</h2>
+        <h2 class="section-title en">Vision</h2>
         <div class="divider"></div>
         <p class="body-text ar">تحويل القطيف إلى وجهة سياحية رائدة تعكس تراثها العريق وثقافتها الغنية، مع توفير تجارب فريدة تدمج بين الأصالة والتطور. يهدف المشروع إلى تعزيز الاقتصاد المحلي، رفع جودة الحياة للسكان، وتمكين الشباب من خلال فرص عمل مبتكرة، بالإضافة إلى تطوير البنية التحتية البيئية والمجتمعية بما يحقق الاستدامة والحفاظ على التراث للأجيال القادمة.</p>
         <p class="body-text en">To establish Qatif as a premier tourism destination that celebrates its rich heritage and vibrant culture while offering distinctive experiences that seamlessly combine tradition and innovation. The initiative aims to strengthen the local economy, enhance residents' quality of life, empower young people through innovative employment opportunities, and promote sustainable environmental and community development while preserving Qatif's heritage for future generations.
@@ -743,7 +703,6 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 <div class="page" id="page-tours">
   <div class="page-header">
     <h1 class="ar">التجارب والجولات</h1><h1 class="en">Experiences &amp; Tours</h1>
-    <p class="ar">أنشطة متنوعة ومميزة في قلب القطيف</p><p class="en">Unique activities in the heart of Qatif</p>
   </div>
   <div class="breadcrumb">
     <button onclick="showPage('home')"><span class="ar">الرئيسية</span><span class="en">Home</span></button>
@@ -804,7 +763,6 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 <div class="page" id="page-booking">
   <div class="page-header">
     <h1 class="ar">احجز</h1><h1 class="en">Book Now</h1>
-    <p class="ar">سجّل حجزك في تجربة أو جولة بالقطيف</p><p class="en">Reserve your spot for an experience or tour in Qatif</p>
   </div>
   <div class="breadcrumb">
     <button onclick="showPage('home')"><span class="ar">الرئيسية</span><span class="en">Home</span></button>
@@ -815,8 +773,6 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
       <div id="booking-error" class="form-error" style="display:none"></div>
       <div id="booking-form-container">
         <h2 class="ar">نموذج الحجز</h2><h2 class="en">Booking Form</h2>
-        <p class="form-sub ar">يسعدنا استقبالك في القطيف</p>
-        <p class="form-sub en">We look forward to welcoming you in Qatif</p>
         <div class="payment-note">
           <strong class="ar">تعليمات الدفع</strong><strong class="en">Payment Instructions</strong>
           <span class="ar">يرجى تحويل المبلغ إلى <span dir="ltr">+966542848833</span> عبر STC Pay، ثم إرفاق صورة التحويل في نهاية النموذج.</span>
@@ -851,17 +807,19 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <!-- <option value="9:00 AM - 12:00 PM">9:00 AM – 12:00 PM</option> -->
           </select>
         </div>
+        <!--
         <div class="form-group">
           <label><span class="ar">هل لديك حساسية؟</span><span class="en">Do you have any allergies?</span> <span class="req">*</span></label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="allergy" value="yes" onchange="toggleAllergyField(true)"/> <span class="ar">نعم</span><span class="en">Yes</span></label>
             <label class="radio-label"><input type="radio" name="allergy" value="no" onchange="toggleAllergyField(false)" checked/> <span class="ar">لا</span><span class="en">No</span></label>
-          </div>
+          </div> 
         </div>
         <div class="form-group" id="bf-allergy-detail" style="display:none">
           <label><span class="ar">نوع الحساسية</span><span class="en">Type of Allergy</span></label>
           <input type="text" id="bf-allergy-text" name="allergy_type"/>
         </div>
+        -->
         <div class="form-group">
           <label><span class="ar">كيف سمعت عنا؟</span><span class="en">How did you hear about us?</span></label>
           <div class="check-group">
@@ -901,7 +859,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 <div class="page" id="page-works">
   <div class="page-header">
     <h1 class="ar">آخر أعمالنا</h1><h1 class="en">Our Work</h1>
-    <p class="ar">لحظات وذكريات من رحلة الدروازة</p><p class="en">Moments and memories from Aldirwaza's journey</p>
+    <p class="ar">اقرأ عن فعاليات الدروازة</p><p class="en">Read about Aldirwaza's activities</p>
   </div>
   <div class="breadcrumb">
     <button onclick="showPage('home')"><span class="ar">الرئيسية</span><span class="en">Home</span></button>
@@ -926,7 +884,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
 <div class="page" id="page-contact">
   <div class="page-header">
     <h1 class="ar">تواصل معنا</h1><h1 class="en">Contact Us</h1>
-    <p class="ar">يسعدنا سماعك والإجابة على استفساراتك</p><p class="en">We'd love to hear from you</p>
+    <p class="ar">يسعدنا سماعك</p><p class="en">We'd love to hear from you</p>
   </div>
   <div class="breadcrumb">
     <button onclick="showPage('home')"><span class="ar">الرئيسية</span><span class="en">Home</span></button>
@@ -1006,8 +964,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
     <div class="footer-brand">
       <div class="brand-name ar">مبادرة الدروازة</div>
       <div class="brand-name en">Aldirwaza Initiative</div>
-      <p class="ar">حيث يلتقي الخُط العريق بقطيف الغد. نعمل على تحويل القطيف إلى وجهة سياحية رائدة تعكس تراثها العريق وثقافتها الغنية.</p>
-      <p class="en">Where heritage meets tomorrow's Qatif. We're building a leading cultural tourism destination that celebrates Qatif's rich history.</p>
+      <p class="ar">حيث يلتقي الخُط العريق بقطيف الغد.</p>
+      <p class="en">Where Al-Khatt meets the Qatif of tomorrow</p>
       <div class="footer-social">
         <a href="https://www.instagram.com/aldirwaza_sa/" target="_blank" rel="noopener" class="social-btn" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
         <a href="https://x.com/Aldirwaza_sa" target="_blank" rel="noopener" class="social-btn" title="X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L2.25 2.25h6.803l4.26 5.632 5.73-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117Z"/></svg></a>
@@ -1037,15 +995,15 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
       </ul>
       <h4 style="margin-top:1.5rem" class="ar">الموقع</h4>
       <h4 style="margin-top:1.5rem" class="en">Location</h4>
-      <address class="ar">القطيف، المنطقة الشرقية<br/>المملكة العربية السعودية</address>
-      <address class="en">Qatif, Eastern Province<br/>Saudi Arabia</address>
+      <address class="ar">،القطيف، المنطقة الشرقية<br/>المملكة العربية السعودية</address>
+      <address class="en">Qatif, Eastern Province,<br/>Saudi Arabia</address>
     </div>
   </div>
   <div class="footer-bottom">
-    <span class="ar">&#169; ٢٠٢٥ مبادرة الدروازة</span>
-    <span class="en">&#169; 2025 Aldirwaza Initiative</span>
-    <span class="ar">القطيف • الخط العريق</span>
-    <span class="en">Qatif • Ancient Heritage</span>
+    <span class="ar">مبادرة الدروازة</span>
+    <span class="en">Aldirwaza Initiative</span>
+    <span class="ar">القطيف</span>
+    <span class="en">AlQatif</span>
   </div>
 </footer>
 
