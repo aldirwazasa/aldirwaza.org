@@ -329,7 +329,7 @@ const HERO_GALLERY = [
   "images/gallery/tour_3.jpg",
   "images/gallery/pottery_1.jpg",
   "images/gallery/tour_4.jpg",
-  "images/gallery/cooking_1.jpg",
+  "images/gallery/cooking_1.JPG",
   "images/gallery/tour_5.jpg",
   "images/gallery/pottery_2.jpg",
   "images/gallery/tour_6.jpg",
