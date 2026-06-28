@@ -131,11 +131,30 @@ function renderAll() {
   if(sel) {
     const placeholder = t('اختر النشاط', 'Select an activity');
     sel.innerHTML = `<option value="">${placeholder}</option>` +
-      EXPERIENCES.filter(e=>e.status==='active').map(e=>{
-        const prefix = e.type==='tour' ? t('جولة: ','Tour: ') : t('تجربة: ','Experience: ');
-        const name   = t(e.title, e.titleEn||e.title);
-        return `<option value="${e.title}">${prefix}${name}</option>`;
+      EXPERIENCES.filter(e => e.status === 'active').map(e => {
+        const prefix  = e.type === 'tour' ? t('جولة: ', 'Tour: ') : t('تجربة: ', 'Experience: ');
+        const name    = t(e.title, e.titleEn || e.title);
+        const avail   = e.available && e.dates && e.dates.length > 0;
+        const label   = avail ? '' : ' — ' + t('غير متاح حالياً', 'Not available');
+        return `<option value="${e.title}" ${avail ? '' : 'disabled style="color:#aaa"'}>${prefix}${name}${label}</option>`;
       }).join('');
+  }
+  const sel = document.getElementById('bf-activity');
+  if (sel) {
+    sel.addEventListener('change', () => {
+      const exp = EXPERIENCES.find(e => e.title === sel.value);
+      const banner = document.getElementById('bf-unavailable-banner');
+      if (!banner) return;
+      if (exp && (!exp.available || !exp.dates || exp.dates.length === 0)) {
+        banner.textContent = t(
+          'هذا النشاط غير متاح للحجز حالياً. تواصل معنا للمزيد.',
+          'This activity is not currently available for booking. Contact us for more info.'
+        );
+        banner.style.display = 'block';
+      } else {
+        banner.style.display = 'none';
+      }
+    });
   }
 }
 
