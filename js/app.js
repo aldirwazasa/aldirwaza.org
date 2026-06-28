@@ -128,7 +128,7 @@ function renderAll() {
 }
 
 // ── NAV ──────────────────────────────────────────────
-const PAGES = ['home','about','tours','landmarks','booking','works','contact'];
+const PAGES = ['home','about','tours','landmarks','booking','works','contact','join'];
 
 function showPage(id) {
   PAGES.forEach(p => {
@@ -253,6 +253,91 @@ function resetContact() {
   if(btn){btn.disabled=false;btn.querySelector('.ar').textContent='إرسال الرسالة';btn.querySelector('.en').textContent='Send Message';}
   document.getElementById('contact-error').style.display='none';
 }
+
+function countWords(el) {
+  const words = el.value.trim() === '' ? 0 : el.value.trim().split(/\s+/).length;
+  const counter = document.getElementById('jf-wordcount');
+  if (counter) {
+    counter.textContent = words + ' / 100';
+    counter.style.color = words > 100 ? '#b03030' : 'var(--stone)';
+  }
+  if (words > 100) {
+    // Trim to 100 words
+    const trimmed = el.value.trim().split(/\s+/).slice(0, 100).join(' ');
+    el.value = trimmed;
+    counter.textContent = '100 / 100';
+  }
+}
+
+async function submitJoin() {
+  const firstName = document.getElementById('jf-firstname').value.trim();
+  const lastName  = document.getElementById('jf-lastname').value.trim();
+  const age       = document.getElementById('jf-age').value.trim();
+  const phone     = document.getElementById('jf-phone').value.trim();
+  const team      = document.getElementById('jf-team').value;
+  const why       = document.getElementById('jf-why').value.trim();
+  const errEl     = document.getElementById('join-error');
+  errEl.style.display = 'none';
+
+  if (!firstName || !lastName || !age || !phone || !team || !why) {
+    errEl.textContent = t('يرجى تعبئة جميع الحقول الإلزامية', 'Please fill in all required fields');
+    errEl.style.display = 'block';
+    return;
+  }
+  const words = why.split(/\s+/).length;
+  if (words > 100) {
+    errEl.textContent = t('يرجى الالتزام بـ ١٠٠ كلمة كحد أقصى', 'Please keep your answer to 100 words maximum');
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('join-submit-btn');
+  btn.disabled = true;
+  btn.querySelector('.ar').textContent = 'جاري الإرسال...';
+  btn.querySelector('.en').textContent = 'Submitting...';
+
+  const FORMSPREE_JOIN = 'YOUR_FORMSPREE_ID'; // replace with your Formspree ID
+  if (FORMSPREE_JOIN !== 'YOUR_FORMSPREE_ID') {
+    try {
+      const res = await fetch('https://formspree.io/f/' + FORMSPREE_JOIN, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, age, phone, team, why, language: currentLang })
+      });
+      if (!res.ok) throw new Error();
+    } catch {
+      btn.disabled = false;
+      btn.querySelector('.ar').textContent = 'إرسال الطلب';
+      btn.querySelector('.en').textContent = 'Submit Application';
+      errEl.textContent = t('حدث خطأ، يرجى المحاولة مرة أخرى.', 'An error occurred, please try again.');
+      errEl.style.display = 'block';
+      return;
+    }
+  }
+
+  document.getElementById('join-form-container').style.display = 'none';
+  document.getElementById('join-success').style.display = 'block';
+}
+
+function resetJoin() {
+  document.getElementById('join-form-container').style.display = 'block';
+  document.getElementById('join-success').style.display = 'none';
+  ['jf-firstname','jf-lastname','jf-age','jf-phone','jf-why'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.value = '';
+  });
+  const sel = document.getElementById('jf-team');
+  if (sel) sel.selectedIndex = 0;
+  const counter = document.getElementById('jf-wordcount');
+  if (counter) { counter.textContent = '0 / 100'; counter.style.color = 'var(--stone)'; }
+  const btn = document.getElementById('join-submit-btn');
+  if (btn) {
+    btn.disabled = false;
+    btn.querySelector('.ar').textContent = 'إرسال الطلب';
+    btn.querySelector('.en').textContent = 'Submit Application';
+  }
+  document.getElementById('join-error').style.display = 'none';
+}
+
 
 function handleNewsletter(e) {
   e.preventDefault();
