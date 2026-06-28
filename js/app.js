@@ -38,20 +38,21 @@ function expCard(e) {
   const desc  = t(e.description, e.descEn || e.description);
   const tag   = t(e.tag, e.tagEn || e.tag);
   let bookTxt, btnCls, btnAction;
+  const instaUrl = 'https://www.instagram.com/aldirwaza_sa/';
   if (e.status === 'coming-soon') {
-    bookTxt   = t('قريباً', 'Coming Soon');
+    bookTxt   = t('ابق على اطلاع', 'Stay Updated');
     btnCls    = 'btn btn-outline btn-sm';
-    btnAction = '';
+    btnAction = `onclick="window.open('${instaUrl}','_blank')"`;
   } else if (!e.available || !e.dates || e.dates.length === 0) {
-    bookTxt   = t('لا توجد مواعيد متاحة', 'No dates available');
+    bookTxt   = t('ابق على اطلاع', 'Stay Updated');
     btnCls    = 'btn btn-outline btn-sm';
-    btnAction = '';
+    btnAction = `onclick="window.open('${instaUrl}','_blank')"`;
   } else {
     bookTxt   = t('احجز الآن', 'Book Now');
     btnCls    = 'btn btn-primary btn-sm';
     btnAction = `onclick="showPage('booking','${e.id}')"`;
   }
-  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" ${btnAction} ${!btnAction ? 'disabled style="cursor:default;opacity:.6"' : ''}>${bookTxt}</button></div></div></div>`;
+  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" ${btnAction}>${bookTxt}</button></div>${(!e.available || !e.dates || e.dates.length === 0) && e.status !== 'coming-soon' ? `<div style="font-size:.72rem;color:var(--ink-soft);margin-top:.35rem;opacity:.7">${t('لا توجد مواعيد متاحة حالياً','No dates currently available')}</div>` : ''}</div></div>`;
 }
 
 function teamCard(m) {
