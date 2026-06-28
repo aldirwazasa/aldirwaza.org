@@ -276,7 +276,7 @@ html[lang="en"] .card-badge{right:auto;left:.65rem;}
 
 /* ── Landmarks ── */
 .landmark-list{display:flex;flex-direction:column;gap:1.6rem;}
-  .landmark-item {
+.landmark-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
@@ -332,8 +332,15 @@ html[lang="en"] .form-group label .req{margin-right:0;margin-left:.12rem;}
 .radio-group, .check-group {
   display: flex;
   flex-direction: column;
-  gap: .55rem;
+  gap: .4rem;
   margin-top: .4rem;
+}
+.radio-label, .check-label {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .88rem;
+  cursor: pointer;
 }
   
 .payment-note{background:var(--cream);border-right:4px solid var(--brown-lt);border-radius:4px;padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.88rem;color:var(--ink-soft);line-height:1.7;}
