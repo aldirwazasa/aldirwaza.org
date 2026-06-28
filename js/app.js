@@ -37,9 +37,21 @@ function expCard(e) {
   const loc   = t(e.location, e.locationEn || e.location);
   const desc  = t(e.description, e.descEn || e.description);
   const tag   = t(e.tag, e.tagEn || e.tag);
-  const bookTxt = e.status==='coming-soon' ? t('ابق على اطلاع','Notify Me') : t('احجز الآن','Book Now');
-  const btnCls  = e.status==='coming-soon' ? 'btn btn-stone btn-sm' : 'btn btn-primary btn-sm';
-  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" onclick="showPage('booking','${e.id}')">${bookTxt}</button></div></div></div>`;
+  let bookTxt, btnCls, btnAction;
+  if (e.status === 'coming-soon') {
+    bookTxt   = t('قريباً', 'Coming Soon');
+    btnCls    = 'btn btn-outline btn-sm';
+    btnAction = '';
+  } else if (!e.available || !e.dates || e.dates.length === 0) {
+    bookTxt   = t('لا توجد مواعيد متاحة', 'No dates available');
+    btnCls    = 'btn btn-outline btn-sm';
+    btnAction = '';
+  } else {
+    bookTxt   = t('احجز الآن', 'Book Now');
+    btnCls    = 'btn btn-primary btn-sm';
+    btnAction = `onclick="showPage('booking','${e.id}')"`;
+  }
+  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" ${btnAction} ${!btnAction ? 'disabled style="cursor:default;opacity:.6"' : ''}>${bookTxt}</button></div></div></div>`;
 }
 
 function teamCard(m) {
@@ -129,13 +141,44 @@ function renderAll() {
 
 function prefillBooking(activityId) {
   const exp = EXPERIENCES.find(e => e.id === activityId);
-  if (!exp) return;
-
-  // Pre-select the activity in the dropdown
+  if (!exp || !exp.available || !exp.dates || exp.dates.length === 0) return;
   const sel = document.getElementById('bf-activity');
   if (sel) sel.value = exp.title;
+  const dateEl = document.getElementById('bf-date');
+  if (dateEl) {
+    // Replace the plain date input with a select for this activity
+    const placeholder = t('اختر التاريخ', 'Choose a date');
+    dateEl.outerHTML = `<select id="bf-date" name="date" onchange="updateSlotsForDate('${activityId}')">
+      <option value="">${placeholder}</option>
+      ${exp.dates.map(d => `<option value="${d.date}">${d.date}${d.spotsLeft !== undefined ? ' — ' + d.spotsLeft + t(' مقعد متاح', ' spots left') : ''}</option>`).join('')}
+    </select>`;
+  }
 
-  // Replace time slot options with this activity's slots
+  // Reset time slots until a date is picked
+  const timeEl = document.getElementById('bf-time');
+  if (timeEl) {
+    timeEl.innerHTML = `<option value="">${t('اختر التاريخ أولاً', 'Choose a date first')}</option>`;
+  }
+
+  // Show price from first date as default
+  const priceNote = document.getElementById('bf-price-note');
+  if (priceNote && exp.dates[0].price) {
+    priceNote.textContent = t('السعر: ', 'Price: ') + exp.dates[0].price;
+    priceNote.style.display = 'block';
+  }
+
+  // Show/hide allergy and receipt fields
+  const allergyGroup = document.querySelector('.allergy-group');
+  if (allergyGroup) allergyGroup.style.display = exp.requiresAllergy ? 'block' : 'none';
+  const ageGroup = document.querySelector('.age-group');
+  if (ageGroup) ageGroup.style.display = exp.requiresAge ? 'block' : 'none';
+}
+/*
+function prefillBooking(activityId) {
+  const exp = EXPERIENCES.find(e => e.id === activityId);
+  if (!exp) return;
+  const sel = document.getElementById('bf-activity');
+  if (sel) sel.value = exp.title;
   const timeEl = document.getElementById('bf-time');
   if (timeEl && exp.slots) {
     const placeholder = t('اختر الوقت', 'Choose a time');
@@ -171,6 +214,34 @@ function prefillBooking(activityId) {
       ? t('السعر: ', 'Price: ') + exp.price
       : '';
     priceNote.style.display = exp.price ? 'block' : 'none';
+  }
+}
+*/
+function updateSlotsForDate(activityId) {
+  const exp = EXPERIENCES.find(e => e.id === activityId);
+  if (!exp) return;
+
+  const dateEl = document.getElementById('bf-date');
+  const selectedDate = dateEl ? dateEl.value : '';
+  const dateObj = exp.dates.find(d => d.date === selectedDate);
+
+  const timeEl = document.getElementById('bf-time');
+  if (!timeEl) return;
+
+  if (!dateObj) {
+    timeEl.innerHTML = `<option value="">${t('اختر التاريخ أولاً', 'Choose a date first')}</option>`;
+    return;
+  }
+
+  const placeholder = t('اختر الوقت', 'Choose a time');
+  timeEl.innerHTML = `<option value="">${placeholder}</option>` +
+    dateObj.slots.map(s => `<option value="${s}">${s}</option>`).join('');
+
+  // Update price note for selected date
+  const priceNote = document.getElementById('bf-price-note');
+  if (priceNote && dateObj.price) {
+    priceNote.textContent = t('السعر: ', 'Price: ') + dateObj.price;
+    priceNote.style.display = 'block';
   }
 }
 // ── NAV ──────────────────────────────────────────────
