@@ -699,8 +699,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
       </div>
       <div class="team-grid reveal" id="team-members"></div>
       <div style="text-align:center;margin-top:2.8rem" class="reveal">
-        <a href="https://aldirwaza.org/%d8%a5%d9%86%d8%b6%d9%85-%d8%a5%d9%84%d9%8a%d9%86%d8%a7/" target="_blank" rel="noopener" class="btn btn-olive ar">انضم إلى فريق الدروازة</a>
-        <a href="https://aldirwaza.org/%d8%a5%d9%86%d8%b6%d9%85-%d8%a5%d9%84%d9%8a%d9%86%d8%a7/" target="_blank" rel="noopener" class="btn btn-olive en">Join the Team</a>
+        <button onclick="showPage('join')" class="btn btn-olive ar">انضم إلى فريق الدروازة</button>
+        <button onclick="showPage('join')" class="btn btn-olive en">Join the Team</button>
       </div>
     </div>
   </section>
@@ -896,6 +896,95 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
   </div>
 </div>
 
+<!-- ═══ JOIN ═══ -->
+<div class="page" id="page-join">
+  <div class="page-header">
+    <h1 class="ar">انضم إلى فريق الدروازة!</h1>
+    <h1 class="en">Join the Team!</h1>
+  </div>
+  <div class="breadcrumb">
+    <button onclick="showPage('home')"><span class="ar">الرئيسية</span><span class="en">Home</span></button>
+    <span>›</span>
+    <button onclick="showPage('about')"><span class="ar">من نحن</span><span class="en">About</span></button>
+    <span>›</span>
+    <span class="ar">انضم إلينا</span><span class="en">Join Us</span>
+  </div>
+  <section class="section" style="background:var(--surface)">
+    <div class="form-wrap">
+      <div id="join-error" class="form-error" style="display:none"></div>
+      <div id="join-form-container">
+        <h2 class="ar">نموذج الانضمام</h2>
+        <h2 class="en">Application Form</h2>
+        <p class="form-sub ar">أخبرنا عن نفسك وسنتواصل معك</p>
+        <p class="form-sub en">Tell us about yourself and we'll be in touch</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="form-group">
+            <label><span class="ar">الاسم الأول</span><span class="en">First Name</span> <span class="req">*</span></label>
+            <input type="text" id="jf-firstname" autocomplete="given-name"/>
+          </div>
+          <div class="form-group">
+            <label><span class="ar">اسم العائلة</span><span class="en">Last Name</span> <span class="req">*</span></label>
+            <input type="text" id="jf-lastname" autocomplete="family-name"/>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="form-group">
+            <label><span class="ar">العمر</span><span class="en">Age</span> <span class="req">*</span></label>
+            <input type="number" id="jf-age" min="16" max="99" placeholder="—"/>
+          </div>
+          <div class="form-group">
+            <label><span class="ar">رقم الجوال</span><span class="en">Phone Number</span> <span class="req">*</span></label>
+            <input type="tel" id="jf-phone" placeholder="+966 5X XXX XXXX" dir="ltr" autocomplete="tel"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label><span class="ar">الفريق</span><span class="en">Team of Interest</span> <span class="req">*</span></label>
+          <select id="jf-team">
+            <option value=""><span class="ar">اختر الفريق</span></option>
+            <option value="Marketing">
+              <span class="ar">التسويق</span><span class="en">Marketing</span>
+            </option>
+            <option value="Experiences">
+              <span class="ar">التجارب</span><span class="en">Experiences</span>
+            </option>
+            <option value="Quality of Life">
+              <span class="ar">جودة الحياة</span><span class="en">Quality of Life</span>
+            </option>
+            <option value="Tech">
+              <span class="ar">التقنية</span><span class="en">Tech</span>
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <span class="ar">لماذا تريد الانضمام؟</span>
+            <span class="en">Why do you want to join?</span>
+            <span class="req">*</span>
+            <span id="jf-wordcount" style="float:left;font-size:.75rem;color:var(--stone);font-weight:normal">0 / 100</span>
+          </label>
+          <textarea id="jf-why" oninput="countWords(this)" style="min-height:120px" placeholder=""></textarea>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="join-submit-btn" onclick="submitJoin()">
+          <span class="ar">إرسال الطلب</span><span class="en">Submit Application</span>
+        </button>
+      </div>
+
+      <div class="form-success" id="join-success" style="display:none">
+        <div class="check-icon">&#10003;</div>
+        <h3 class="ar">تم استلام طلبك</h3><h3 class="en">Application Received!</h3>
+        <p class="ar">سنراجع طلبك ونتواصل معك قريباً. شكراً لاهتمامك بالدروازة. نرجو الملاحظة أن هذا الطلب لا يضمن الانضمام.</p>
+        <p class="en">We'll review your application and be in touch soon. Thank you for your interest in Aldirwaza. Please note that this form does not guarantee joining Aldirwaza.</p>
+        <button class="btn btn-outline ar" onclick="resetJoin()">إرسال طلب آخر</button>
+        <button class="btn btn-outline en" onclick="resetJoin()">Submit Another</button>
+      </div>
+    </div>
+  </section>
+</div>
 
 <!-- ═══ CONTACT ═══ -->
 <div class="page" id="page-contact">
