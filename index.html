@@ -811,6 +811,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
           <label><span class="ar">النشاط</span><span class="en">Activity</span> <span class="req">*</span></label>
           <select id="bf-activity" name="activity"></select>
         </div>
+        <div id="bf-price-note" style="display:none;background:var(--cream);border-radius:4px;padding:.6rem 1rem;margin-bottom:1rem;font-size:.88rem;color:var(--brown);font-weight:700;"></div>
         <div class="form-group">
           <label><span class="ar">التاريخ</span><span class="en">Date</span> <span class="req">*</span></label>
           <input type="date" id="bf-date" name="date"/>
@@ -824,8 +825,15 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <!-- <option value="9:00 AM - 12:00 PM">9:00 AM – 12:00 PM</option> -->
           </select>
         </div>
-        <!--
-        <div class="form-group">
+        <div class="form-group age-group" style="display:none">
+          <label>
+            <span class="ar">العمر</span>
+            <span class="en">Age</span>
+            <span class="req">*</span>
+          </label>
+          <input type="number" id="bf-age" name="age" min="1" max="120" placeholder="—"/>
+        </div>
+        <div class="form-group allergy-group">
           <label><span class="ar">هل لديك حساسية؟</span><span class="en">Do you have any allergies?</span> <span class="req">*</span></label>
           <div class="radio-group">
             <label class="radio-label"><input type="radio" name="allergy" value="yes" onchange="toggleAllergyField(true)"/> <span class="ar">نعم</span><span class="en">Yes</span></label>
@@ -836,7 +844,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
           <label><span class="ar">نوع الحساسية</span><span class="en">Type of Allergy</span></label>
           <input type="text" id="bf-allergy-text" name="allergy_type"/>
         </div>
-        -->
+        
         <div class="form-group">
           <label><span class="ar">كيف سمعت عنا؟</span><span class="en">How did you hear about us?</span></label>
           <div class="check-group">
