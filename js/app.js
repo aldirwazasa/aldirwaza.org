@@ -39,7 +39,7 @@ function expCard(e) {
   const tag   = t(e.tag, e.tagEn || e.tag);
   const bookTxt = e.status==='coming-soon' ? t('ابق على اطلاع','Notify Me') : t('احجز الآن','Book Now');
   const btnCls  = e.status==='coming-soon' ? 'btn btn-stone btn-sm' : 'btn btn-primary btn-sm';
-  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" onclick="showPage('booking')">${bookTxt}</button></div></div></div>`;
+  return `<div class="card"><div class="card-img">${imgOrPh(e.image,title)}<span class="card-badge ${bc}">${bl}</span></div><div class="card-body"><div class="card-location">${loc}</div><h3 class="card-title">${title}</h3><p class="card-desc">${desc}</p><div class="card-meta"><span class="card-tag">${tag}</span>${e.price?`<span style="font-size:.82rem;color:var(--olive)">${e.price}</span>`:''}<button class="${btnCls}" onclick="showPage('booking','${e.id}')">${bookTxt}</button></div></div></div>`;
 }
 
 function teamCard(m) {
@@ -127,10 +127,56 @@ function renderAll() {
   }
 }
 
+function prefillBooking(activityId) {
+  const exp = EXPERIENCES.find(e => e.id === activityId);
+  if (!exp) return;
+
+  // Pre-select the activity in the dropdown
+  const sel = document.getElementById('bf-activity');
+  if (sel) sel.value = exp.title;
+
+  // Replace time slot options with this activity's slots
+  const timeEl = document.getElementById('bf-time');
+  if (timeEl && exp.slots) {
+    const placeholder = t('اختر الوقت', 'Choose a time');
+    timeEl.innerHTML = `<option value="">${placeholder}</option>` +
+      exp.slots.map(s => `<option value="${s}">${s}</option>`).join('');
+  }
+
+  // Show/hide allergy field
+  const allergyGroup = document.querySelector('.allergy-group');
+  if (allergyGroup) {
+    allergyGroup.style.display = exp.requiresAllergy ? 'block' : 'none';
+  }
+  // Show/hide age field
+  const ageGroup = document.querySelector('.age-group');
+  if (ageGroup) {
+    ageGroup.style.display = exp.requiresAge ? 'block' : 'none';
+    const ageInput = document.getElementById('bf-age');
+    if (ageInput) {
+      ageInput.min = exp.minAge || 1;
+      ageInput.max = exp.maxAge || 120;
+      if (exp.minAge || exp.maxAge) {
+        ageInput.placeholder = exp.minAge && exp.maxAge
+          ? `${exp.minAge} – ${exp.maxAge}`
+          : exp.minAge ? `${t('من','from')} ${exp.minAge}` 
+                       : `${t('حتى','up to')} ${exp.maxAge}`;
+      }
+    }
+  }
+  // Show price if available
+  const priceNote = document.getElementById('bf-price-note');
+  if (priceNote) {
+    priceNote.textContent = exp.price
+      ? t('السعر: ', 'Price: ') + exp.price
+      : '';
+    priceNote.style.display = exp.price ? 'block' : 'none';
+  }
+}
 // ── NAV ──────────────────────────────────────────────
 const PAGES = ['home','about','tours','landmarks','booking','works','contact','join'];
 
-function showPage(id) {
+function showPage(id, activityId) {
   PAGES.forEach(p => {
     const pg=document.getElementById('page-'+p);
     const btn=document.getElementById('nav-'+p);
@@ -143,6 +189,9 @@ function showPage(id) {
   if(btn) btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
   renderAll();
+  if (id === 'booking' && activityId) {
+    prefillBooking(activityId);
+  }
   initReveal();
 }
 
