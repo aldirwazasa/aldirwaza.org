@@ -331,8 +331,8 @@ html[lang="en"] .landmark-item.flip .landmark-text { direction: ltr; }
 .form-group label{display:block;font-size:.82rem;margin-bottom:.35rem;color:var(--ink-soft);}
 .form-group label .req{color:#b03030;margin-right:.12rem;}
 html[lang="en"] .form-group label .req{margin-right:0;margin-left:.12rem;}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.68rem .95rem;border:1.5px solid var(--border);border-radius:4px;font-family:var(--fb);font-size:.9rem;color:var(--ink);background:var(--surface);transition:border-color var(--tr),box-shadow var(--tr);-webkit-appearance:none;appearance:none;}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--brown);background:var(--white);box-shadow:0 0 0 3px rgba(157,119,87,.15);}
+.form-group input:not([type="radio"]):not([type="checkbox"]),.form-group select,.form-group textarea{width:100%;padding:.68rem .95rem;border:1.5px solid var(--border);border-radius:4px;font-family:var(--fb);font-size:.9rem;color:var(--ink);background:var(--surface);transition:border-color var(--tr),box-shadow var(--tr);-webkit-appearance:none;appearance:none;}
+.form-group input:not([type="radio"]):not([type="checkbox"]):focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--brown);background:var(--white);box-shadow:0 0 0 3px rgba(157,119,87,.15);}
 .form-group textarea{resize:vertical;min-height:96px;}
 .form-group input[type="file"]{padding:.45rem;}
 .radio-group,
