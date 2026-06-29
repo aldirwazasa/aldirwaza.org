@@ -235,11 +235,11 @@ const LANDMARKS = [
 const TEAM_EXECUTIVES = [
   {
     name:    "دانة العلقم",
-    nameEn:  "Dana Al-Alqam",
+    nameEn:  "Dana Alalqam",
     role:    "رئيسة المبادرة ومسؤولة جودة الحياة",
     roleEn:  "President and Quality of Life Lead",
-    bio:     "",
-    bioEn:   "",
+    bio:     "تدرس دانة إدارة الضيافة الدولية وأسست الدروازة لإيمانها بأن القطيف تملك تراث غني و هوية تستحق إنها تُصان و تُقدَّم بأسلوب حديث. الدروازة بالنسبة لها هي بوابة نربط فيها تراثنا بمستقبلنا، ونطلق القطيف للعالم.",
+    bioEn:   "Dana studies International Hospitality Management. She co-founded Aldirwaza believing that AlQatif’s heritage and identity are worthy of preserving and modernizing. To her, Aldirwaza is a gateway between our history and future, allowing us to globalize AlQatif.",
     image: "images/team/dana_alalqam.jpg",
   },
   {
@@ -247,8 +247,8 @@ const TEAM_EXECUTIVES = [
     nameEn:  "Jumana Alhawaj",
     role:    "مسؤولة التجارب",
     roleEn:  "Experiences Lead",
-    bio:     "",
-    bioEn:   "",
+    bio:     "جمانة تعتز بهوية القطيف المتجذرة في مجتمعها وناسها وتؤمن إن القطيف مايسندها إلا أولادها، وهو مادفعها إلى المساهمة في تأسيس والحفاظ على الدروازة.",
+    bioEn:   "Jumana takes great pride in Qatif’s identity, rooted in its close-knit community and its people. She believes that Qatif’s future can only be built and sustained by its own residents, a conviction that inspired her to co-found and continue serving on Aldirwaza’s team.",
     image: "images/team/jumanah_alhawaj.JPG",
   },
   {
@@ -304,7 +304,7 @@ const TEAM_MEMBERS = [
   },
   {
     name:    "فاطمة العوامي",
-    nameEn:  "Fatima Al-Awami",
+    nameEn:  "Fatimah Al-Awami",
     role:    "",
     roleEn:  "",
     bio:     "",
