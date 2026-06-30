@@ -807,7 +807,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
   <section class="section" style="background:var(--surface)">
     <div class="form-wrap">
       <div id="booking-error" class="form-error" style="display:none"></div>
-      <div id="booking-form-container">
+      <form name="booking" netlify id="booking-form-container">
+        <input type="hidden" name="form-name" value="booking"/>
         <h2 class="ar">نموذج الحجز</h2><h2 class="en">Booking Form</h2>
         <div class="payment-note">
           <strong class="ar">تعليمات الدفع</strong><strong class="en">Payment Instructions</strong>
@@ -888,7 +889,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
         <button class="btn btn-primary btn-full" id="booking-submit-btn" onclick="submitBooking()">
           <span class="ar">أرسل الحجز</span><span class="en">Submit Booking</span>
         </button>
-      </div>
+      </form>
       <div class="form-success" id="booking-success" style="display:none">
         <div class="check-icon">&#10003;</div>
         <h3 class="ar">تم استلام طلبك</h3><h3 class="en">Booking Received!</h3>
@@ -942,7 +943,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
   <section class="section" style="background:var(--surface)">
     <div class="form-wrap">
       <div id="join-error" class="form-error" style="display:none"></div>
-      <div id="join-form-container">
+      <form name="join" netlify>
+        <input type="hidden" name="form-name" value="join"/>
         <h2 class="ar">نموذج الانضمام</h2>
         <h2 class="en">Application Form</h2>
         <p class="form-sub ar">أخبرنا عن نفسك وسنتواصل معك</p>
@@ -1002,7 +1004,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
         <button class="btn btn-primary btn-full" id="join-submit-btn" onclick="submitJoin()">
           <span class="ar">إرسال الطلب</span><span class="en">Submit Application</span>
         </button>
-      </div>
+      </form>
 
       <div class="form-success" id="join-success" style="display:none">
         <div class="check-icon">&#10003;</div>
@@ -1063,7 +1065,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
           <h3 class="contact-info-title ar" style="margin-bottom:1.4rem">أرسل لنا رسالة</h3>
           <h3 class="contact-info-title en" style="margin-bottom:1.4rem">Send Us a Message</h3>
           <div id="contact-error" class="form-error" style="display:none"></div>
-          <div id="contact-form-content">
+          <form name="contact" netlify id="contact-form-content">
+            <input type="hidden" name="form-name" value="contact"/>
             <div class="form-group">
               <label><span class="ar">الاسم</span><span class="en">Name</span> <span class="req">*</span></label>
               <input type="text" id="cf-name" autocomplete="name"/>
@@ -1079,7 +1082,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <button class="btn btn-primary btn-full" id="contact-submit-btn" onclick="submitContact()">
               <span class="ar">إرسال الرسالة</span><span class="en">Send Message</span>
             </button>
-          </div>
+          </form>
           <div class="form-success" id="contact-success" style="display:none">
             <div class="check-icon">&#10003;</div>
             <h3 class="ar">تم إرسال رسالتك</h3><h3 class="en">Message Sent!</h3>
