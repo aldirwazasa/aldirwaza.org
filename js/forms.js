@@ -1,38 +1,22 @@
 /**
  * ═══════════════════════════════════════════════════════
  *  ALDIRWAZA — FORMS
- *
- *  BOOKING DATA STORAGE — HOW IT WORKS:
- *  All form submissions are sent to Formspree.io, a secure
- *  third-party service. You:
- *    1. Create a free account at https://formspree.io
- *    2. Create a new form there → copy the form ID
- *    3. Paste it below as FORMSPREE_BOOKING_ID
- *    4. View all submissions at formspree.io/dashboard
- *       — downloadable as CSV, email notifications, etc.
- *
- *  PAYMENT GATEWAY (future):
- *  When you're ready to integrate payments, replace the
- *  "payment-gateway-placeholder" div in booking.html with
- *  the payment provider's widget (e.g. HyperPay, Moyasar).
- *  The form structure is already prepared for this.
- *  All form fields use `name` attributes compatible with
- *  standard payment gateway pre-auth flows.
- *
- *  SECURITY:
- *  - Forms use HTTPS-only submission (Formspree enforces this)
- *  - File upload (receipt) is handled via Formspree's file API
- *  - No sensitive data is stored in the browser
- *  - When you add a payment gateway, use their hosted fields
- *    so card data never touches your server
+ *  All submissions go to Netlify Forms.
+ *  View them in your Netlify dashboard under "Forms".
+ *  Set up email notifications in:
+ *  Site settings → Forms → Form notifications
  * ═══════════════════════════════════════════════════════
  */
 
-/* ── CONFIGURE YOUR FORM IDs HERE ──────────────────── */
-const FORMSPREE_BOOKING_ID = 'YOUR_FORMSPREE_ID';   // ← replace
-const FORMSPREE_CONTACT_ID = 'YOUR_FORMSPREE_ID';   // ← replace (can be same form)
-
-const FORMSPREE_BASE = 'https://formspree.io/f/';
+/* ── Instead of Formspree IDs ──────────────────── */
+async function submitToNetlify(formName, fd) {
+  const res = await fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(fd).toString()
+  });
+  if (!res.ok) throw new Error('Netlify submission failed');
+}
 
 /* ── Booking form ───────────────────────────────────── */
 function toggleAllergyField(show) {
@@ -83,21 +67,15 @@ async function submitBooking() {
   const receipt = document.getElementById('bf-receipt').files[0];
   if (receipt) fd.append('receipt', receipt);
 
-  // If Formspree ID is set, send; otherwise simulate
-  if (FORMSPREE_BOOKING_ID !== 'YOUR_FORMSPREE_ID') {
-    try {
-      const res = await fetch(FORMSPREE_BASE + FORMSPREE_BOOKING_ID, {
-        method: 'POST',
-        body: fd,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (!res.ok) throw new Error('server error');
-    } catch (err) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'أرسل الحجز';
-      showFormError('booking', 'حدث خطأ، يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.');
-      return;
-    }
+  try {
+    fd.append('form-name', 'booking');
+    const res = await fetch('/', { method: 'POST', body: fd });
+    if (!res.ok) throw new Error('server error');
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'أرسل الحجز';
+    showFormError('booking', 'حدث خطأ، يرجى المحاولة مرة أخرى أو التواصل عبر واتساب.');
+    return;
   }
 
   // Show success
@@ -138,20 +116,18 @@ async function submitContact() {
   btn.disabled = true;
   btn.textContent = 'جاري الإرسال...';
 
-  if (FORMSPREE_CONTACT_ID !== 'YOUR_FORMSPREE_ID') {
-    try {
-      const res = await fetch(FORMSPREE_BASE + FORMSPREE_CONTACT_ID, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, message: msg })
-      });
-      if (!res.ok) throw new Error('server error');
-    } catch {
-      btn.disabled = false;
-      btn.textContent = 'إرسال الرسالة';
-      showFormError('contact', 'حدث خطأ، يرجى المحاولة مرة أخرى.');
-      return;
-    }
+  try {
+    const fd = new FormData();
+    fd.append('form-name', 'contact');
+    fd.append('name', name);
+    fd.append('email', email);
+    fd.append('message', msg);
+    await submitToNetlify('contact', fd);
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'إرسال الرسالة';
+    showFormError('contact', 'حدث خطأ، يرجى المحاولة مرة أخرى.');
+    return;
   }
 
   document.getElementById('contact-form-content').style.display = 'none';
