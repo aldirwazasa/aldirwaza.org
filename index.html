@@ -871,11 +871,11 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
         <div class="form-group">
           <label><span class="ar">كيف سمعت عنا؟</span><span class="en">How did you hear about us?</span></label>
           <div class="check-group">
-            <label class="check-label"><input type="checkbox" class="bf-source" value="Instagram"/> Instagram</label>
-            <label class="check-label"><input type="checkbox" class="bf-source" value="WhatsApp"/> WhatsApp</label>
-            <label class="check-label"><input type="checkbox" class="bf-source" value="TikTok"/> TikTok</label>
-            <label class="check-label"><input type="checkbox" class="bf-source" value="Website"/> <span class="ar">الموقع</span><span class="en">Website</span></label>
-            <label class="check-label"><input type="checkbox" class="bf-source" value="Other"/> <span class="ar">غيرهم</span><span class="en">Other</span></label>
+            <label class="check-label"><input type="checkbox" name="source" class="bf-source" value="Instagram"/> Instagram</label>
+            <label class="check-label"><input type="checkbox" name="source" class="bf-source" value="WhatsApp"/> WhatsApp</label>
+            <label class="check-label"><input type="checkbox" name="source" class="bf-source" value="TikTok"/> TikTok</label>
+            <label class="check-label"><input type="checkbox" name="source" class="bf-source" value="Website"/> <span class="ar">الموقع</span><span class="en">Website</span></label>
+            <label class="check-label"><input type="checkbox" name="source" class="bf-source" value="Other"/> <span class="ar">غيرهم</span><span class="en">Other</span></label>
           </div>
         </div>
         <div class="form-group">
@@ -953,28 +953,28 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
           <div class="form-group">
             <label><span class="ar">الاسم الأول</span><span class="en">First Name</span> <span class="req">*</span></label>
-            <input type="text" id="jf-firstname" autocomplete="given-name"/>
+            <input type="text" id="jf-firstname" name="firstName" autocomplete="given-name"/>
           </div>
           <div class="form-group">
             <label><span class="ar">اسم العائلة</span><span class="en">Last Name</span> <span class="req">*</span></label>
-            <input type="text" id="jf-lastname" autocomplete="family-name"/>
+            <input type="text" id="jf-lastname" name="lastName" autocomplete="family-name"/>
           </div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
           <div class="form-group">
             <label><span class="ar">العمر</span><span class="en">Age</span> <span class="req">*</span></label>
-            <input type="number" id="jf-age" min="16" max="99" placeholder="—"/>
+            <input type="number" id="jf-age" name="age" min="16" max="99" placeholder="—"/>
           </div>
           <div class="form-group">
             <label><span class="ar">رقم الجوال</span><span class="en">Phone Number</span> <span class="req">*</span></label>
-            <input type="tel" id="jf-phone" placeholder="+966 5X XXX XXXX" dir="ltr" autocomplete="tel"/>
+            <input type="tel" id="jf-phone" name="phone" placeholder="+966 5X XXX XXXX" dir="ltr" autocomplete="tel"/>
           </div>
         </div>
 
         <div class="form-group">
           <label><span class="ar">الفريق</span><span class="en">Team of Interest</span> <span class="req">*</span></label>
-          <select id="jf-team">
+          <select id="jf-team" name="team">
             <option value=""><span class="ar">اختر الفريق</span></option>
             <option value="Marketing">
               <span class="ar">التسويق</span><span class="en">Marketing</span>
@@ -996,7 +996,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <span class="ar">لماذا تريد الانضمام؟</span>
             <span class="en">Why do you want to join?</span>
             <span class="req">*</span>
-            <span id="jf-wordcount" style="float:left;font-size:.75rem;color:var(--stone);font-weight:normal">0 / 100</span>
+            <span id="jf-wordcount" name="why" style="float:left;font-size:.75rem;color:var(--stone);font-weight:normal">0 / 100</span>
           </label>
           <textarea id="jf-why" oninput="countWords(this)" style="min-height:120px" placeholder=""></textarea>
         </div>
@@ -1069,15 +1069,15 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <input type="hidden" name="form-name" value="contact"/>
             <div class="form-group">
               <label><span class="ar">الاسم</span><span class="en">Name</span> <span class="req">*</span></label>
-              <input type="text" id="cf-name" autocomplete="name"/>
+              <input type="text" id="cf-name" name="name" autocomplete="name"/>
             </div>
             <div class="form-group">
               <label><span class="ar">البريد الإلكتروني</span><span class="en">Email</span> <span class="req">*</span></label>
-              <input type="email" id="cf-email" dir="ltr" autocomplete="email"/>
+              <input type="email" id="cf-email" name="email" dir="ltr" autocomplete="email"/>
             </div>
             <div class="form-group">
               <label><span class="ar">الرسالة</span><span class="en">Message</span> <span class="req">*</span></label>
-              <textarea id="cf-msg" style="min-height:130px"></textarea>
+              <textarea id="cf-msg" name="message" style="min-height:130px"></textarea>
             </div>
             <button class="btn btn-primary btn-full" id="contact-submit-btn" onclick="submitContact()">
               <span class="ar">إرسال الرسالة</span><span class="en">Send Message</span>
