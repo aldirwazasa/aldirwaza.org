@@ -842,8 +842,8 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
         <div class="form-group">
           <label><span class="ar">الوقت</span><span class="en">Time Slot</span> <span class="req">*</span></label>
           <select id="bf-time" name="time">
-            <option value="" class="ar">اختر الوقت</option>
-            <option value="" class="en">Choose a time</option>
+            <option value="">—</option>
+          </select>
             <!-- <option value="3:30 - 6:00 PM">3:30 – 6:00 PM</option> -->
             <!-- <option value="9:00 AM - 12:00 PM">9:00 AM – 12:00 PM</option> -->
           </select>
@@ -943,7 +943,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
   <section class="section" style="background:var(--surface)">
     <div class="form-wrap">
       <div id="join-error" class="form-error" style="display:none"></div>
-      <form name="join" netlify>
+      <form name="join" netlify id="join-form-container">
         <input type="hidden" name="form-name" value="join"/>
         <h2 class="ar">نموذج الانضمام</h2>
         <h2 class="en">Application Form</h2>
@@ -996,7 +996,7 @@ html[lang="en"] .modal-close{right:auto;left:.85rem;}
             <span class="ar">لماذا تريد الانضمام؟</span>
             <span class="en">Why do you want to join?</span>
             <span class="req">*</span>
-            <span id="jf-wordcount" name="why" style="float:left;font-size:.75rem;color:var(--stone);font-weight:normal">0 / 100</span>
+            <span id="jf-wordcount" style="float:left;font-size:.75rem;color:var(--stone);font-weight:normal">0 / 100</span>
           </label>
           <textarea id="jf-why" oninput="countWords(this)" style="min-height:120px" placeholder=""></textarea>
         </div>
