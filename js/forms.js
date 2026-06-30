@@ -143,6 +143,71 @@ function resetContact() {
   clearFormError('contact');
 }
 
+/* ── Join form ──────────────────────────────────────── */
+async function submitJoin() {
+  const firstName = document.getElementById('jf-firstname').value.trim();
+  const lastName  = document.getElementById('jf-lastname').value.trim();
+  const age       = document.getElementById('jf-age').value.trim();
+  const phone     = document.getElementById('jf-phone').value.trim();
+  const team      = document.getElementById('jf-team').value;
+  const why       = document.getElementById('jf-why').value.trim();
+
+  if (!firstName || !lastName || !age || !phone || !team || !why) {
+    showFormError('join', 'يرجى تعبئة جميع الحقول الإلزامية');
+    return;
+  }
+  const words = why.split(/\s+/).length;
+  if (words > 100) {
+    showFormError('join', 'يرجى الالتزام بـ ١٠٠ كلمة كحد أقصى');
+    return;
+  }
+
+  const btn = document.getElementById('join-submit-btn');
+  btn.disabled = true;
+  btn.querySelector('.ar').textContent = 'جاري الإرسال...';
+  btn.querySelector('.en').textContent = 'Submitting...';
+
+  try {
+    const fd = new FormData();
+    fd.append('form-name', 'join');
+    fd.append('firstName', firstName);
+    fd.append('lastName', lastName);
+    fd.append('age', age);
+    fd.append('phone', phone);
+    fd.append('team', team);
+    fd.append('why', why);
+    await submitToNetlify('join', fd);
+  } catch {
+    btn.disabled = false;
+    btn.querySelector('.ar').textContent = 'إرسال الطلب';
+    btn.querySelector('.en').textContent = 'Submit Application';
+    showFormError('join', 'حدث خطأ، يرجى المحاولة مرة أخرى.');
+    return;
+  }
+
+  document.getElementById('join-form-container').style.display = 'none';
+  document.getElementById('join-success').style.display = 'block';
+}
+
+function resetJoin() {
+  document.getElementById('join-form-container').style.display = 'block';
+  document.getElementById('join-success').style.display = 'none';
+  ['jf-firstname','jf-lastname','jf-age','jf-phone','jf-why'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.value = '';
+  });
+  const sel = document.getElementById('jf-team');
+  if (sel) sel.selectedIndex = 0;
+  const counter = document.getElementById('jf-wordcount');
+  if (counter) { counter.textContent = '0 / 100'; counter.style.color = 'var(--stone)'; }
+  const btn = document.getElementById('join-submit-btn');
+  if (btn) {
+    btn.disabled = false;
+    btn.querySelector('.ar').textContent = 'إرسال الطلب';
+    btn.querySelector('.en').textContent = 'Submit Application';
+  }
+  clearFormError('join');
+}
+
 /* ── Newsletter ─────────────────────────────────────── */
 const MAILCHIMP_URL = 'https://aldirwaza.us9.list-manage.com/subscribe/post?u=7d5697319d569f0ce57f52fdc&id=1ca226be48'; // paste your URL from Step 2
 
