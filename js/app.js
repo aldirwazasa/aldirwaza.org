@@ -528,21 +528,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('aldirwaza-lang') || 'ar';
   setLang(saved);
   showPage('home');
- 
-  // Register activity dropdown unavailability banner — once only
+
+  // Register activity dropdown listener — once only
   const sel = document.getElementById('bf-activity');
-  if(sel) {
+  if (sel) {
     sel.addEventListener('change', () => {
       const exp    = EXPERIENCES.find(e => e.title === sel.value);
       const banner = document.getElementById('bf-unavailable-banner');
-      if(!banner) return;
-      if(exp && (!exp.available || !exp.dates || exp.dates.length===0)){
-        banner.textContent = t('هذا النشاط غير متاح للحجز حالياً. تواصل معنا للمزيد.','This activity is not currently available for booking. Contact us for more info.');
-        banner.style.display='block';
+      if (!banner) return;
+      if (exp && (!exp.available || !exp.dates || exp.dates.length === 0)) {
+        banner.textContent = t('هذا النشاط غير متاح للحجز حالياً. تواصل معنا للمزيد.', 'This activity is not currently available for booking. Contact us for more info.');
+        banner.style.display = 'block';
       } else {
-        banner.style.display='none';
+        banner.style.display = 'none';
+        if (exp) prefillBooking(exp.id);
       }
     });
   }
 });
- 
