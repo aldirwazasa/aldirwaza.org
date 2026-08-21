@@ -140,19 +140,6 @@ function renderAll() {
         return `<option value="${e.title}" ${avail ? '' : 'disabled style="color:#aaa"'}>${prefix}${name}${label}</option>`;
       }).join('');
 
-    sel.addEventListener('change', () => {
-      const exp = EXPERIENCES.find(e => e.title === sel.value);
-      const banner = document.getElementById('bf-unavailable-banner');
-      if (!banner) return;
-      if (exp && (!exp.available || !exp.dates || exp.dates.length === 0)) {
-        banner.textContent = t(
-          'هذا النشاط غير متاح للحجز حالياً. تواصل معنا للمزيد.',
-          'This activity is not currently available for booking. Contact us for more info.'
-        );
-        banner.style.display = 'block';
-      } else {
-        banner.style.display = 'none';
-      }
     });
   }
 }
@@ -667,4 +654,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('aldirwaza-lang') || 'ar';
   setLang(saved);
   showPage('home');
+  const sel = document.getElementById('bf-activity');
+  if (sel) {
+    sel.addEventListener('change', () => {
+      const exp = EXPERIENCES.find(e => e.title === sel.value);
+      const banner = document.getElementById('bf-unavailable-banner');
+      if (!banner) return;
+      if (exp && (!exp.available || !exp.dates || exp.dates.length === 0)) {
+        banner.textContent = t(
+          'هذا النشاط غير متاح للحجز حالياً. تواصل معنا للمزيد.',
+          'This activity is not currently available for booking. Contact us for more info.'
+        );
+        banner.style.display = 'block';
+      } else {
+        banner.style.display = 'none';
+      }
+    });
+  }
+
 });
