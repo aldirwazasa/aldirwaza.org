@@ -150,15 +150,16 @@ function prefillBooking(activityId) {
   const sel = document.getElementById('bf-activity');
   if (sel) sel.value = exp.title;
 
-  const dateEl = document.getElementById('bf-date');
-  if (dateEl) {
-    const placeholder = t('اختر التاريخ', 'Choose a date');
-    dateEl.innerHTML = `<option value="">${placeholder}</option>` +
-      exp.dates.map(d =>
-        `<option value="${d.date}">${d.date}${d.spotsLeft !== undefined ? ' — ' + d.spotsLeft + t(' مقعد متاح', ' spots left') : ''}</option>`
-      ).join('');
-    dateEl.disabled = false;
-  }
+    const dateEl = document.getElementById('bf-date');
+    if (dateEl) {
+      const placeholder = t('اختر التاريخ', 'Choose a date');
+      dateEl.innerHTML = `<option value="">${placeholder}</option>` +
+        exp.dates.map(d =>
+          `<option value="${d.date}">${d.date}${d.spotsLeft !== undefined ? ' — ' + d.spotsLeft + t(' مقعد متاح', ' spots left') : ''}</option>`
+        ).join('');
+      dateEl.disabled = false;
+      dateEl.onchange = () => updateSlotsForDate(activityId);
+    }
 
   // Reset time slots until a date is picked
   const timeEl = document.getElementById('bf-time');
@@ -175,7 +176,10 @@ function prefillBooking(activityId) {
   // Show note from first date as default
   const dateNote = document.getElementById('bf-date-note');
   if (dateNote) {
-    const note = t(exp.dates[0].note, exp.dates[0].noteEn || exp.dates[0].note);
+        const note = t(
+      dateObj.note || exp.note || '',
+      dateObj.noteEn || exp.noteEn || dateObj.note || exp.note || ''
+    );
     if (note) {
       dateNote.textContent = note;
       dateNote.style.display = 'block';
