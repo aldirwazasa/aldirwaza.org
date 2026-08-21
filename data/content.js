@@ -221,7 +221,7 @@ const EXPERIENCES = [
        },
     ], 
     available: true,
-    note: "ملاحظة: التجمع سيكون عن منتجع النخيل وقد تستغرق الفعالية 4 إلى 5 ساعات",
+    note: "ملاحظة: التجمع سيكون عن منتجع النخيل (https://maps.app.goo.gl/6kfQMwnecCSw7JM5A?g_st=ic) وقد تستغرق الفعالية 4-5 ساعات. كما نود التنبيه بأن الفعالية مخصصة لعمر 21 وأكبر.",
     requiresAge: true,
     requiresAllergy: false,
   },
