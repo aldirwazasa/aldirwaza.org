@@ -4,9 +4,8 @@
  * ═══════════════════════════════════════════════════════
  */
 
-const NAV_PAGES = ['home', 'about', 'tours', 'landmarks', 'booking', 'works', 'contact'];
-
-function showPage(id) {
+const NAV_PAGES = ['home', 'about', 'tours', 'landmarks', 'booking', 'works', 'contact', 'join'];
+function showPage(id, activityId) {
   // Hide all pages
   NAV_PAGES.forEach(p => {
     const pg  = document.getElementById('page-' + p);
@@ -24,6 +23,9 @@ function showPage(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   initReveal();           // re-run scroll-reveal on the new page
   renderAll();            // ensure dynamic content is rendered
+  if (id === 'booking' && activityId) {
+    prefillBooking(activityId);
+  }
 }
 
 /* ── Mobile nav ─────────────────────────────────────── */
@@ -53,8 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   showPage('home');
 
-  // Set minimum date for booking calendar to today
-  const today = new Date().toISOString().split('T')[0];
-  const dateEl = document.getElementById('bf-date');
-  if (dateEl) dateEl.min = today;
 });
