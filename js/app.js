@@ -127,8 +127,8 @@ function renderAll() {
   setEl('team-members',    TEAM_MEMBERS.map(teamCard).join(''));
   setEl('works-list',      WORKS.map((w,i)=>workCard(w,i)).join(''));
 
-  // Booking dropdown
-    const sel = document.getElementById('bf-activity');
+  // Booking dropdown — rebuild options only, listener is registered once in DOMContentLoaded
+  const sel = document.getElementById('bf-activity');
   if (sel) {
     const placeholder = t('اختر النشاط', 'Select an activity');
     sel.innerHTML = `<option value="">${placeholder}</option>` +
@@ -140,7 +140,6 @@ function renderAll() {
         return `<option value="${e.title}" ${avail ? '' : 'disabled style="color:#aaa"'}>${prefix}${name}${label}</option>`;
       }).join('');
   }
-}
 }
 
 function prefillBooking(activityId) {
