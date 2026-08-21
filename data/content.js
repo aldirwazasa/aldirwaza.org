@@ -198,6 +198,33 @@ const EXPERIENCES = [
     requiresAge: false,
     requiresAllergy: true,
   },
+  {
+    id: "diving",
+    type: "experience",
+    status: "active",
+    title:       "الغوص",
+    titleEn:     "Diving",
+    location:    "منتجع النخيل",
+    locationEn:  "Palms Resort",
+    description: "اكتشف جمال أعماق مياه الخليج العربي في تجربة غوص مميزة برفقة المدرب فتحي آل نصيف.",
+    descEn:      "Discover the beauty of the Arabian Gulf through a unique diving experience with instructor Fathi Al-Naseef.",
+    image: "images/logo.png",
+    tag:    "تجربة يدوية",
+    tagEn:  "Hands-On",
+    price: "130 SAR",
+    duration: "",
+    dates: [
+       {
+          date: "8/29/2026",
+          slots: ["6:00-11:00 AM"],
+          spotsLeft: 12,
+       },
+    ], 
+    available: true,
+    note: "ملاحظة: التجمع سيكون عن منتجع النخيل وقد تستغرق الفعالية 4 إلى 5 ساعات",
+    requiresAge: true,
+    requiresAllergy: false,
+  },
 ];
 
 // ─────────────────────────────────────────────────────
