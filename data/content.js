@@ -224,6 +224,7 @@ const EXPERIENCES = [
     ], 
     available: true,
     requiresAge: true,
+    minAge: 21,
     requiresAllergy: false,
   },
 ];
