@@ -22,9 +22,9 @@ function showPage(id, activityId) {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
   initReveal();           // re-run scroll-reveal on the new page
-  renderAll();            // ensure dynamic content is rendered
+  renderAll();
   if (id === 'booking' && activityId) {
-    prefillBooking(activityId);
+    setTimeout(() => prefillBooking(activityId), 0);
   }
 }
 
