@@ -237,7 +237,7 @@ function updateSlotsForDate(activityId) {
 }
 // ── NAV ──────────────────────────────────────────────
 const PAGES = ['home','about','tours','landmarks','booking','works','contact','join'];
-
+let currentActivityId = null;
 function showPage(id, activityId) {
   PAGES.forEach(p => {
     const pg=document.getElementById('page-'+p);
