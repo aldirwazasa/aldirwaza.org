@@ -212,11 +212,12 @@ const EXPERIENCES = [
     tag:    "تجربة يدوية",
     tagEn:  "Hands-On",
     price: "130 SAR",
-    duration: "",
+    duration: "4-5 hours",
     dates: [
        {
           date: "8/29/2026",
           slots: ["6:00-11:00 AM"],
+          price: "130 SAR",
           spotsLeft: 12,
        },
     ], 
