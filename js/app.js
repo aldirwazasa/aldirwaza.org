@@ -296,9 +296,12 @@ function showPage(id, activityId) {
   if(pg)  pg.classList.add('active');
   if(btn) btn.classList.add('active');
   window.scrollTo({top:0, behavior:'smooth'});
-  renderAll();
   if (id === 'booking' && activityId) {
-    setTimeout(() => prefillBooking(activityId), 0);
+    // Skip renderAll so it doesn't reset the form, then prefill
+    renderAll();
+    prefillBooking(activityId);
+  } else {
+    renderAll();
   }
   initReveal();
 }
