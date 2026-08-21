@@ -128,20 +128,6 @@ function renderAll() {
   setEl('works-list',      WORKS.map((w,i)=>workCard(w,i)).join(''));
 
   // Booking dropdown
-  const sel = document.getElementById('bf-activity');
-  if (sel) {
-    const placeholder = t('اختر النشاط', 'Select an activity');
-    sel.innerHTML = `<option value="">${placeholder}</option>` +
-      EXPERIENCES.filter(e => e.status === 'active').map(e => {
-        const prefix = e.type === 'tour' ? t('جولة: ', 'Tour: ') : t('تجربة: ', 'Experience: ');
-        const name   = t(e.title, e.titleEn || e.title);
-        const avail  = e.available && e.dates && e.dates.length > 0;
-        const label  = avail ? '' : ' — ' + t('غير متاح حالياً', 'Not available');
-        return `<option value="${e.title}" ${avail ? '' : 'disabled style="color:#aaa"'}>${prefix}${name}${label}</option>`;
-      }).join('');
-
-    });
-  }
 }
 
 function prefillBooking(activityId) {
