@@ -187,7 +187,17 @@ function prefillBooking(activityId) {
     priceNote.textContent = t('السعر: ', 'Price: ') + exp.dates[0].price;
     priceNote.style.display = 'block';
   }
-
+  // Show note from first date as default
+  const dateNote = document.getElementById('bf-date-note');
+  if (dateNote) {
+    const note = t(exp.dates[0].note, exp.dates[0].noteEn || exp.dates[0].note);
+    if (note) {
+      dateNote.textContent = note;
+      dateNote.style.display = 'block';
+    } else {
+      dateNote.style.display = 'none';
+    }
+  }
   // Show/hide allergy and age fields
   const allergyGroup = document.querySelector('.allergy-group');
   if (allergyGroup) allergyGroup.style.display = exp.requiresAllergy ? 'block' : 'none';
