@@ -219,7 +219,7 @@ const EXPERIENCES = [
           slots: ["6:00-11:00 AM"],
           price: "130 SAR",
           spotsLeft: 12,
-          note: "ملاحظة: التجمع سيكون عن منتجع النخيل (https://maps.app.goo.gl/6kfQMwnecCSw7JM5A?g_st=ic) وقد تستغرق الفعالية 4-5 ساعات. كما نود التنبيه بأن الفعالية مخصصة لعمر 21 وأكبر.",
+          note: "ملاحظة: التجمع سيكون عن منتجع النخيل (https://maps.app.goo.gl/6kfQMwnecCSw7JM5A?g_st=ic) وقد تستغرق الفعالية 4-5 ساعات. كما نود التنبيه بأن الفعالية مخصصة لعمر 21 وأكبر وللرجال فقط.",
        },
     ], 
     available: true,
