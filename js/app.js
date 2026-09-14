@@ -528,7 +528,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('aldirwaza-lang') || 'ar';
   setLang(saved);
   showPage('home');
-
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const parts      = hash.split('/');
+    const pageId     = parts[0];
+    const activityId = parts[1] || null;
+    if (PAGES.includes(pageId)) {
+      showPage(pageId, activityId);
+    }
+  }
   // Register activity dropdown listener — once only
   const sel = document.getElementById('bf-activity');
   if (sel) {
