@@ -107,7 +107,7 @@ const EXPERIENCES = [
     duration: " 5-6 hours",
     dates: [
        {
-          date: "3/10/2026",
+          date: "10/10/2026",
           slots: ["6:00-11:00 AM"],
           price: "130 SAR",
           spotsLeft: 6,
