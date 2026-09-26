@@ -107,14 +107,14 @@ const EXPERIENCES = [
     duration: " 5-6 hours",
     dates: [
        {
-          date: "9/24/2026",
+          date: "3/10/2026",
           slots: ["6:00-11:00 AM"],
           price: "130 SAR",
-          spotsLeft: 5,
+          spotsLeft: 6,
           note: "ملاحظة: التجمع سيكون عن منتجع النخيل (https://maps.app.goo.gl/6kfQMwnecCSw7JM5A?g_st=ic) وقد تستغرق الفعالية 4-5 ساعات. كما نود التنبيه بأن الفعالية مخصصة لعمر 21 وأكبر وللنساء فقط. يرجى إحضار ملابس رياضية أو ملابس مخصصة للغوص.",
        },
     ], 
-    available: false,
+    available: true,
     requiresAge: true,
     minAge: 21,
     requiresAllergy: false,
